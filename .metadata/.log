@@ -1,0 +1,1158 @@
+!SESSION 2017-07-07 14:33:02.323 -----------------------------------------------
+eclipse.buildId=3.7.3.201602250940-RELEASE-e45
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide
+
+This is a continuation of log file C:\Repo\ACE2\.metadata\.bak_0.log
+Created Time: 2017-07-07 14:37:47.420
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:37:47.420
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:37:52.343
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:37:57.271
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:02.157
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:07.065
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:11.992
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:16.851
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:22.034
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:26.950
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:31.789
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:36.672
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:41.550
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-07-07 14:38:46.437
+!MESSAGE Connection to http://www.pramati.com/downloads/eclipse/updates/p2.index failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2017-07-07 14:38:59.787
+!MESSAGE An error occurred while collecting items to be installed
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2017-07-07 14:38:59.787
+!MESSAGE session context was:(profile=DefaultProfile, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.binding.config.ui,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.gsc,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxb.ui,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxrs.common,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.annotations,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.creation.ejb.ui,1.0.650.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.creation.ui,1.1.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.emitter,1.1.800.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.handlers.ui,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.policyset.ui,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.service.policy.ui,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.ui,6.1.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.xml.editor,1.0.301.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ccl.ws.finder.core,1.0.350.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ccl.ws.finder.ui,1.0.350.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ccl.ws.jaxws.gstc.core,1.0.302.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ccl.ws.jaxws.gstc.ui,1.0.800.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.annotations.core,1.0.409.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.annotations.ejb.ui,1.200.0.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.annotations.jpa.ui,1.300.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.annotations.ui,1.301.101.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.common.frameworks,1.0.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.emf.workbench.ui,5.1.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.environment.core,6.1.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.environment.ui,6.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.j2ee,6.0.700.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.j2ee.ejb,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.j2ee.ui,6.0.950.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.j2ee.web,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.javaee.cdi.core,1.2.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.javaee.core,1.3.402.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.javaee.ui.editors,1.0.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.maven.javaee.core,1.1.602.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.maven.javaee.ui,1.1.402.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.project.explorer,7.5.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.slickui,1.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webservice.discovery.core,7.0.550.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webservice.was.consumption.core,6.1.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webservice.was.core,6.1.650.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.wrd.websphere.core,2.0.750.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.wrd.websphere.core.util,1.0.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.faceted.project.wizard,1.0.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.faceted.project.wizard.core,1.1.0.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.deploy.jdbc,1.1.1201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.jpa.compatibility,1.300.1.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.jpa.entity.config,1.200.101.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.jpa.platform,1.200.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.search.core,1.0.3.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.was.descriptors,1.2.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.was.descriptors.schemas,1.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.propertygroup,6.5.101.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.propertygroup.ui,6.3.250.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.test.lt.provider,7.1.110.v20150918_2202
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.core,8.5.200.v20160120_2301
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.models.core,9.0.100.v20160212_2300
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.protocols.ui,8.2.200.v20150416_1548
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.resources,8.5.200.v20150430_0823
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.ui,8.5.200.v20160204_1501
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.ustc.api,8.5.300.v20160114_2301
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.ustc.core,8.5.300.v20160205_2300
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.ustc.ui,8.5.310.v20160120_2301
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.facets.core,6.2.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.st.common.core,6.2.951.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.st.core,7.1.101.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.st.jmx.core,1.1.902.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.verify.core,1.1.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.jaxrs.core,1.0.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.jaxrs.ui,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.xwt.dde,1.1.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.xwt.wsdl,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.xwt.wsdl.validation,1.0.301.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.xwt.wsdl.validation.core,2.0.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,org.apache.commons.io,2.4.0
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.jaxrs,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.jpa,1.2.2.20160830-1241
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.jsf,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.overlay,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.overlay.ui,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,org.sonatype.m2e.buildhelper,0.15.0.201212120353
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.creation.ui.mars,1.0.1.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ast.ws.jaxws.mars.feature,1.0.0.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ccl.ua.wizards.feature,1.2.2.v20130508_2218
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.787
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ccl.ws.jaxws.gstc.core,1.0.302.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ccl.ws.jaxws.gstc.ui,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.annotations.feature,1.0.413.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.annotations.ui.feature.eclipse43,1.300.102.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.j2ee.common,7.0.550.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.javaee.editors.feature.eclipse43,1.1.701.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.maven.javaee.feature,1.1.402.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.project.explorer.feature,1.0.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.restapi.documentation.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.restapi.documentation.swagger.ui,1.1.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.slickui.feature,1.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.webservice.discovery.core,7.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.webservice.finder.ui.feature,1.0.150.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.webservice.gsc.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webtools.json.core,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webtools.json.ui,1.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.wtp.extensions.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.bean.validation.core,1.0.102.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.jee.bean.validation.feature,1.0.4.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.bean.validation.ui,1.0.102.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.jee.jpa.common.feature.eclipse44,1.400.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.jee.jpa.core.feature.eclipse43,1.400.250.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.jee.was.descriptors.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.propertygroup.feature,6.6.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.ast.ws.tools.feature,17.0.1000.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.doc.feature,1.0.2.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.wdt.install,1.0.65.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.install.feature,1.0.3.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.wdt.install.ui,1.0.12.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.javaee.feature,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.wdt.preferences,1.0.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.preferences.feature,1.0.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.restapi.documentation.feature,1.0.0.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.base.webservices,1.0.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.batch.common,2.2.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.batch.webservices,1.0.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.wsfp.common,1.1.800.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.wsfp.rad.tools.common,1.1.700.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.base.webservices,1.0.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.kernel.feature.resolver,1.0.16.cl170120170222-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.st.common.core,1.0.302.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.st.common.core.ext,1.0.7.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.st.core,1.0.803.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.st.rxa.ext,1.0.1.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.st.tools.common.core,1.0.7.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.xwt.dde.feature,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.xwt.ws.common.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.feature,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.jaxrs.feature,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.jpa.feature,1.2.2.20160830-1241
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.jsf.feature,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.sonatype.m2e.buildhelper.feature,0.15.0.201212120353
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2017-07-07 14:38:59.803
+!MESSAGE An error occurred while collecting items to be installed
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2017-07-07 14:38:59.803
+!MESSAGE session context was:(profile=DefaultProfile, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.binding.config.ui,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.gsc,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxb.ui,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxrs.common,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.annotations,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.creation.ejb.ui,1.0.650.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.creation.ui,1.1.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.emitter,1.1.800.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.handlers.ui,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.policyset.ui,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.service.policy.ui,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.ui,6.1.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.xml.editor,1.0.301.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ccl.ws.finder.core,1.0.350.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ccl.ws.finder.ui,1.0.350.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ccl.ws.jaxws.gstc.core,1.0.302.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ccl.ws.jaxws.gstc.ui,1.0.800.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.annotations.core,1.0.409.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.annotations.ejb.ui,1.200.0.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.annotations.jpa.ui,1.300.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.annotations.ui,1.301.101.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.common.frameworks,1.0.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.emf.workbench.ui,5.1.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.environment.core,6.1.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.environment.ui,6.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.j2ee,6.0.700.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.j2ee.ejb,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.j2ee.ui,6.0.950.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.j2ee.web,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.javaee.cdi.core,1.2.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.javaee.core,1.3.402.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.javaee.ui.editors,1.0.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.maven.javaee.core,1.1.602.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.maven.javaee.ui,1.1.402.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.project.explorer,7.5.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.slickui,1.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webservice.discovery.core,7.0.550.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webservice.was.consumption.core,6.1.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webservice.was.core,6.1.650.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.wrd.websphere.core,2.0.750.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.wrd.websphere.core.util,1.0.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.faceted.project.wizard,1.0.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.faceted.project.wizard.core,1.1.0.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.deploy.jdbc,1.1.1201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.jpa.compatibility,1.300.1.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.jpa.entity.config,1.200.101.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.jpa.platform,1.200.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.search.core,1.0.3.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.was.descriptors,1.2.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.was.descriptors.schemas,1.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.propertygroup,6.5.101.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.propertygroup.ui,6.3.250.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.test.lt.provider,7.1.110.v20150918_2202
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.core,8.5.200.v20160120_2301
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.models.core,9.0.100.v20160212_2300
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.protocols.ui,8.2.200.v20150416_1548
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.resources,8.5.200.v20150430_0823
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.common.ui,8.5.200.v20160204_1501
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.ustc.api,8.5.300.v20160114_2301
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.ustc.core,8.5.300.v20160205_2300
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.rational.ttt.ustc.ui,8.5.310.v20160120_2301
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.facets.core,6.2.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.st.common.core,6.2.951.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.st.core,7.1.101.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.st.jmx.core,1.1.902.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.ast.verify.core,1.1.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.jaxrs.core,1.0.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.jaxrs.ui,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.xwt.dde,1.1.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.xwt.wsdl,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.xwt.wsdl.validation,1.0.301.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.xwt.wsdl.validation.core,2.0.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,org.apache.commons.io,2.4.0
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.jaxrs,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.jpa,1.2.2.20160830-1241
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.jsf,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.overlay,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.m2e.wtp.overlay.ui,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,org.sonatype.m2e.buildhelper,0.15.0.201212120353
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ast.ws.jaxws.creation.ui.mars,1.0.1.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ast.ws.jaxws.mars.feature,1.0.0.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ccl.ua.wizards.feature,1.2.2.v20130508_2218
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ccl.ws.jaxws.gstc.core,1.0.302.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ccl.ws.jaxws.gstc.ui,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.annotations.feature,1.0.413.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.annotations.ui.feature.eclipse43,1.300.102.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.j2ee.common,7.0.550.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.javaee.editors.feature.eclipse43,1.1.701.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.maven.javaee.feature,1.1.402.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.project.explorer.feature,1.0.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.restapi.documentation.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.restapi.documentation.swagger.ui,1.1.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.slickui.feature,1.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.webservice.discovery.core,7.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.webservice.finder.ui.feature,1.0.150.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.webservice.gsc.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webtools.json.core,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.etools.webtools.json.ui,1.1.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.etools.wtp.extensions.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.bean.validation.core,1.0.102.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.jee.bean.validation.feature,1.0.4.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.jee.bean.validation.ui,1.0.102.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.jee.jpa.common.feature.eclipse44,1.400.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.jee.jpa.core.feature.eclipse43,1.400.250.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.jee.was.descriptors.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.propertygroup.feature,6.6.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.ast.ws.tools.feature,17.0.1000.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.doc.feature,1.0.2.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.wdt.install,1.0.65.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.install.feature,1.0.3.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.wdt.install.ui,1.0.12.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.javaee.feature,1.0.400.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.wdt.preferences,1.0.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.preferences.feature,1.0.201.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.wdt.restapi.documentation.feature,1.0.0.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.base.webservices,1.0.300.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.batch.common,2.2.100.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.batch.webservices,1.0.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.wsfp.common,1.1.800.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.ast.wsfp.rad.tools.common,1.1.700.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.base.webservices,1.0.600.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.kernel.feature.resolver,1.0.16.cl170120170222-0512
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.st.common.core,1.0.302.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.st.common.core.ext,1.0.7.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.st.core,1.0.803.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: osgi.bundle,com.ibm.ws.st.rxa.ext,1.0.1.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.ws.st.tools.common.core,1.0.7.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.xwt.dde.feature,1.0.500.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.ibm.xwt.ws.common.feature,1.0.200.v20170227_1658
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.feature,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.jaxrs.feature,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.jpa.feature,1.2.2.20160830-1241
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.m2e.wtp.jsf.feature,1.2.2.20160830-1240
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2017-07-07 14:38:59.803
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.sonatype.m2e.buildhelper.feature,0.15.0.201212120353

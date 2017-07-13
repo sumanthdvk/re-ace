@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ConfiguratorLayout"
+    targetNamespace="http://schemas.configit.com/ace/import/v1/library"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../Common.xsd"/>
+
+  <xs:complexType name="ConfiguratorLayoutCollection">
+    <xs:sequence>
+      <xs:element name="ConfiguratorLayout" type="ConfiguratorLayoutType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Configurator Layout.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ConfiguratorLayoutType">
+    <xs:all minOccurs="0" maxOccurs="1">
+      <xs:element name="LayoutTabs" type="LayoutTabCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Layout Tabs that belong to this Configurator Layout.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryConfiguratorLayoutsLayoutFeatureFamiliesFeatureFamilyIsUnique">
+          <xs:selector xpath=".//*"/>
+          <xs:field xpath="@FeatureFamily"/>
+        </xs:unique>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Configurator Layout. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Name" type="v1:NameType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The name for the Configurator Layout.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:DescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The description for the Configurator Layout.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LayoutTabType">
+    <xs:all minOccurs="0" maxOccurs="1">
+      <xs:element name="LayoutSections" type="LayoutSectionCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Layout Sections that belong to this Layout Tab.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Name" type="v1:NameType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The name for the Configurator Tab.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Position" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The position for the Configurator Tab.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LayoutSectionType">
+    <xs:all minOccurs="0" maxOccurs="1">
+      <xs:element name="LayoutFeatureFamilies" type="LayoutFeatureFamilyCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Layout Feature Families that belong to this Layout Section.
+          </xs:documentation>
+        </xs:annotation>       
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Name" type="v1:NameType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The name for the Configurator Section.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Position" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The position for the Configurator Section.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LayoutFeatureFamilyType">
+    <xs:all minOccurs="0" maxOccurs="1">
+      <xs:element name="LayoutFeatures" type="LayoutFeatureCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Layout Feature that belong to this Layout Feature Family.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryConfiguratorLayoutsLayoutFeatureIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Feature"/>
+        </xs:unique>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="FeatureFamily" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Feature Family.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="CustomSort" type="xs:boolean" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The type of Feature Sort Mode of this Layout Feature Family.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Position" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The position for the Configurator Section.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LayoutFeatureType">
+    <xs:attribute name="Feature" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The Feature Code.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Position" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The position for the Configurator Section.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LayoutTabCollection">
+    <xs:sequence>
+      <xs:element name="LayoutTab" type="LayoutTabType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Layout Tab.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LayoutSectionCollection">
+    <xs:sequence>
+      <xs:element name="LayoutSection" type="LayoutSectionType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Layout Section.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LayoutFeatureFamilyCollection">
+    <xs:sequence>
+      <xs:element name="LayoutFeatureFamily" type="LayoutFeatureFamilyType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Layout Feature Family.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LayoutFeatureCollection">
+    <xs:sequence>
+      <xs:element name="LayoutFeature" type="LayoutFeatureType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Layout Feature Family.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

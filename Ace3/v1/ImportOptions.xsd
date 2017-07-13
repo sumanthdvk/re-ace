@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="importOptions"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:lib="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:pr="http://schemas.configit.com/ace/import1/v1/productrange">
+
+  <xs:complexType name="DataValidationOptionsType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="ModelYearMapping" type="ModelYearMappingValidationType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Options related to Model Year Mapping validation.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Rule" type="RuleValidationType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Options related to Rule validation.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="ValidationActionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ignore" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ModelYearMappingValidationType">
+    <xs:attribute name="Validation" type="ValidationActionEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Model Year Mapping Validation options.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="RuleValidationType">
+    <xs:attribute name="Validation" type="ValidationActionEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Rule Validation options.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="AllowAceRules" type="xs:boolean" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Allows processing of rules authored in Ace.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="PostImportValidationOptionsType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="CompileProductRanges" type="CompileProductRangesType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Adding this option will fail the import if any of the Product Ranges involved will fail to compile.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreventPromotionIfMasterChanged" type="PreventPromotionIfMasterChangedType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Adding this option will fail if during the import process the Master branch has been updated by other processes/users.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CreateWorkItem" type="CreateWorkItemType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Options related to creation of a Work Item.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CompileProductRangesType" />
+
+  <xs:complexType name="PreventPromotionIfMasterChangedType" />
+
+  <xs:complexType name="CreateWorkItemType">
+    <xs:attribute name="OnFailure" type="OnFailureEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          State of the Work Item when the import fails.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="OnSuccess" type="OnSuccessEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          State of the Work Item when the import succeeds.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="OnFailureEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Closed" />
+      <xs:enumeration value="NonPromotable" />
+      <xs:enumeration value="Open" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="OnSuccessEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Closed" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

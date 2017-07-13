@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ConfigitAceImport xmlns="http://schemas.configit.com/ace/import">
+  <ImportDetails xmlns:v1="http://schemas.configit.com/ace/import/v1">
+    <v1:ImportId>Import id</v1:ImportId>
+    <v1:Description>Sample XmlFile</v1:Description>
+    <v1:Source>Sample source</v1:Source>
+  </ImportDetails>
+  <Library
+    xmlns="http://schemas.configit.com/ace/import"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:pr="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:del="http://schemas.configit.com/ace/import/v1/delete">
+    <lib:DeleteMarketGroups>
+      <del:MarketGroup Code="ALLMRKT" />
+    </lib:DeleteMarketGroups>
+  </Library>
+  <ProductRanges
+    xmlns="http://schemas.configit.com/ace/import"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:pr="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:del="http://schemas.configit.com/ace/import/v1/delete">
+    <pr:ProductRange Code="X0">
+      <pr:DeleteModelYearMappings>
+        <del:ModelYearMapping Feature="MY2017" />
+      </pr:DeleteModelYearMappings>
+      <pr:DeleteRules>
+        <del:Rule Code="TEST_001" />
+      </pr:DeleteRules>
+    </pr:ProductRange>
+  </ProductRanges>
+</ConfigitAceImport>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProductGroup"
+    targetNamespace="http://schemas.configit.com/ace/import/v1/library"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../Common.xsd"/> 
+
+  <xs:complexType name="ProductGroupCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ProductGroup" type="ProductGroupType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Product Group.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>   
+  
+  <xs:complexType name="ProductGroupType">
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Product Group. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:LimitedDescriptionType"  use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Description for Product Group.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ParentGroup" type="v1:CodeType">
+      <xs:annotation>
+        <xs:documentation>
+          Parent Group for Product Group.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Rule"
+    targetNamespace="http://schemas.configit.com/ace/import/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import/v1/library">
+
+  <xs:include schemaLocation="setup/Event.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../PropertyValue.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1/library" schemaLocation="../library/Feature.xsd"/>
+
+  <xs:simpleType name="RuleCodeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="some string" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RuleIntentEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Marketing" />
+      <xs:enumeration value="Engineering" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="RuleHeaderType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="PropertyValues" type="v1:PropertyValueCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Additional properties for the Feature Family
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Code" type="RuleCodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for this Rule. Should be a number prefixed with letters and an underscore, eg. "XYZ_123". Maximum 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:DescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The system description for the Rule.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Intent" type="RuleIntentEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The type of the Rule. Can be one of: Marketing, Engineering.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="StartEvent" type="EventCodeType" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Event on which the Effectivity starts.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="EndEvent" type="EventCodeType" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Event on which the Effectivity ends.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="IsEnabled" type="xs:boolean" use="optional" default="true">
+      <xs:annotation>
+        <xs:documentation>
+          If the rule is enabled.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="IsLocked" type="xs:boolean" use="optional" default="false">
+      <xs:annotation>
+        <xs:documentation>
+          If the rule is locked.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="TextRuleType">
+    <xs:complexContent>
+      <xs:extension base="RuleHeaderType">
+        <xs:sequence>
+          <xs:element name="Body" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Content of the Text Rule.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TextRuleCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="TextRule" type="TextRuleType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Text Rule.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TableRuleBodyRowCellType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Column" type="lib:FeatureCodeCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a unique combination of Column families' features to identify the Column of the Cell.
+            It Should contain exactly one feature for all of the families defined as columns.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="TableRuleBodyRowCellColumnCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TableRuleBodyRowCellCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Cell" type="TableRuleBodyRowCellType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Cell in A Table Rule row.
+            List of Feature codes which represent a unique combination of Features from each Families configured as columns in the Table Rule.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TableRuleBodyRowType">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Cells" type="TableRuleBodyRowCellCollection">
+        <xs:annotation>
+          <xs:documentation>
+            List of Cells in a Table Row.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="RowFeature" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The Feature belonging to a Family configured as row in the Table Rule.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="TableRuleBodyRowCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Row" type="TableRuleBodyRowType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Table Rule row.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TableRuleType">
+    <xs:complexContent>
+      <xs:extension base="RuleHeaderType">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="Columns" type="lib:FamilyCodeCollection" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                List of Families. A column will be created for each combination of features within these families.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:unique name="TableRuleColumnsIsUnique">
+              <xs:selector xpath="./*"/>
+              <xs:field xpath="@Code"/>
+            </xs:unique>
+          </xs:element>
+          <xs:element name="Rows" type="lib:FamilyCodeCollection" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                List of Families. A row will be created for each feature within these families.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:unique name="TableRuleRowsIsUnique">
+              <xs:selector xpath="./*"/>
+              <xs:field xpath="@Code"/>
+            </xs:unique>
+          </xs:element>
+          <xs:element name="Body" type="TableRuleBodyRowCollection" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Rule Body.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TableRuleCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="TableRule" type="TableRuleType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Table Rule.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PackRuleIncludedFeatureType">
+    <xs:complexContent>
+      <xs:extension base="lib:FeatureCodeType">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element name="Condition" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                Condition to be satisfied before selecting the Feature
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="PackRuleIncludedFeatureCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Feature" type="PackRuleIncludedFeatureType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a feature included in the Pack Rule. Driven Feature of the Pack Rule.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PackRuleType">
+    <xs:complexContent>
+      <xs:extension base="RuleHeaderType">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element name="Body" type="PackRuleIncludedFeatureCollection">
+            <xs:annotation>
+              <xs:documentation>
+                Drived Features of the Pack Rule. These Features will be selected when the driving Feature is selected.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:unique name="PackRuleBodyFeaturesCodeIsUnique">
+              <xs:selector xpath=".//*"/>
+              <xs:field xpath="@Code"/>
+            </xs:unique>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="PackFeature" type="v1:CodeType" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Driving Feature code of the Pack Rule. This Feature should belong to a Family of type Pack. Selecting this feature will select the driven Features defined in the Pack Rule.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="PackRuleCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="PackRule" type="PackRuleType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Pack Rule.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RuleType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="TextRules" type="TextRuleCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Text Rules.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesTextRulesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="TableRules" type="TableRuleCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Table Rules.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesTableRulesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="PackRules" type="PackRuleCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Pack Rules.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesPackRulesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

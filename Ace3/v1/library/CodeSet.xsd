@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CodeSetMapping"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/library"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../Common.xsd"/>
+
+  <xs:complexType name="CodeSetType">
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Code Set. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:DescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The description for the Code Set.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="CodeSetCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="CodeSet" type="CodeSetType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Code Set.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CodeSetMappingType" >
+    <xs:attribute name="CodeSet" type="v1:CodeLengthType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Code Set that this mapping is applicable to.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Code" type="v1:CodeLengthType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code in the given Code Set.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:DescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The description in the given Code Set.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="CodeSetMappingCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Mapping" type="CodeSetMappingType">
+        <xs:annotation>
+          <xs:documentation>
+            Contains the details of the mapping.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

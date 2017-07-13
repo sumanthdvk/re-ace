@@ -1,0 +1,64 @@
+package com.mapper;
+
+import com.input.ConfigitAceImport;
+import com.input.ConfigitAceImport.DataValidationOptions;
+import com.input.ConfigitAceImport.ImportDetails;
+import com.input.ConfigitAceImport.Library;
+import com.input.ConfigitAceImport.PostImportValidationOptions;
+import com.input.ConfigitAceImport.ProductRanges;
+import com.output.ConfigitAceImportType;
+import com.output.DataValidationOptionsType;
+import com.output.ImportDetailsType;
+import com.output.LibraryType;
+import com.output.MetadataType;
+import com.output.PostImportValidationOptionsType;
+import com.output.ProductRangeCollection;
+
+public class ConfigitAceImportMapper {
+
+	public static void mapToConfigitAceImportType(ConfigitAceImport in,ConfigitAceImportType out ) {
+		mapToImportDetailsType(in.getImportDetails(),out.getImportDetails());
+		mapToMetadataType(in,out.getMetadata());// no metadata in source as of now
+		mapToDataValidationOptionsType(in.getDataValidationOptions(),out.getDataValidationOptions());
+		mapToPostImportValidationOptionsType(in.getPostImportValidationOptions(),out.getPostImportValidationOptions());
+		mapToLibraryType(in.getLibrary(),out.getLibrary());
+		mapToProductRangeCollection(in.getProductRanges(),out.getProductRanges());
+	}
+
+	private static void mapToProductRangeCollection(ProductRanges productRanges,
+			ProductRangeCollection productRanges2) {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	private static void mapToLibraryType(Library library, LibraryType library2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapToPostImportValidationOptionsType(PostImportValidationOptions postImportValidationOptions,
+			PostImportValidationOptionsType postImportValidationOptions2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapToDataValidationOptionsType(DataValidationOptions dataValidationOptions,
+			DataValidationOptionsType dataValidationOptions2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapToMetadataType(ConfigitAceImport in, MetadataType metadata) {
+			// TODO Auto-generated method stub
+			
+	}
+	
+	private static void mapToImportDetailsType(ImportDetails importDetails, ImportDetailsType importDetails2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+}

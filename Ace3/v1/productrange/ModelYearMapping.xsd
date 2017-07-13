@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ModelYearMapping"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1">
+
+  <xs:include schemaLocation="setup/Event.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../Common.xsd"/>
+
+  <xs:simpleType name="BuildPhaseTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PreVolume" />
+      <xs:enumeration value="Volume" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ModelYearMappingType">
+    <xs:complexContent>
+      <xs:extension base="EffectivityType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="BuildPhaseMappings" type="BuildPhaseMappingCollection" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                List of Feature codes which represent a unique combination of Features from each Families configured as columns in the Table Rule.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:unique name="ProductRangesBuildPhaseMappingsFeatureIsUnique">
+              <xs:selector xpath="./*"/>
+              <xs:field xpath="@Feature"/>
+            </xs:unique>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="Feature" type="v1:CodeType" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Model Year Feature Code. The Feature should belong to a family of type Model Year.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ModelYearMappingCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ModelYearMapping" type="ModelYearMappingType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Model Year Mapping.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BuildPhaseMappingType">
+    <xs:complexContent>
+      <xs:extension base="EffectivityType">
+        <xs:attribute name="Feature" type="v1:CodeType" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Build Phase Feature Code. The Feature should belong to a family of type Build Phase.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="BuildPhaseType" type="BuildPhaseTypeEnum" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Build Phase type. Can be PreVolume, Volume.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BuildPhaseMappingCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="BuildPhaseMapping" type="BuildPhaseMappingType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Build Phase Mapping.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

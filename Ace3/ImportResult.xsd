@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="importResult"
+    targetNamespace="http://schemas.configit.com/ace/import1/result"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/result"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/result"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="v1/Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="v1/Metadata.xsd"/>
+
+  <xs:element name="ConfigitAceImportResult" type="ConfigitAceImportResultType">
+    <xs:annotation>
+      <xs:documentation>
+        Root element. Contains the SchemaValidation, DataValidation, and Summary of the import.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:simpleType name="ResultEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="Failure" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ConfigitAceImportResultType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Metadata" type="v1:MetadataType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Metadata to be stored with the import.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SchemaValidation" type="SchemaValidationErrorCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Contains all the Schema Validation errors and warnings.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DataValidation" type="DataValidationErrorCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Contains all the Data Validation errors and warnings.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Summary" type="SummaryType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Contains summary information about the import.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="MessageId" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the import.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ValidationErrorType">
+    <xs:attribute name="LineNumber" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The Line Number within XML file.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="LinePosition" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The Line Position within XML file.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Message" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The Error Message.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ProductRangeCode" type="v1:CodeType" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          The Product Range Code.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="SchemaValidationErrorType">
+    <xs:complexContent>
+      <xs:extension base="ValidationErrorType">
+        <xs:attribute name="ElementName" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The XML element name.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DataValidationErrorType">
+    <xs:complexContent>
+      <xs:extension base="ValidationErrorType">
+        <xs:attribute name="ElementName" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The XML element name.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="EntityInfo" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The XML entity info.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SchemaValidationErrorCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Error" type="SchemaValidationErrorType"/>
+      <xs:element name="Warning" type="SchemaValidationErrorType"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="DataValidationErrorCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Error" type="DataValidationErrorType"/>
+      <xs:element name="Warning" type="DataValidationErrorType"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="CountersType">
+    <xs:attribute name="Count" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Number of XML elements to be imported.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Succeeded" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Number of XML elements which have been imported successfully.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Failed" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Number of XML elements which failed to be imported.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="InfoType">
+    <xs:complexContent>
+      <xs:extension base="CountersType">
+        <xs:attribute name="ProductRangeCode" type="v1:CodeType" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+              The Product Range Code.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ElementName" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The XML element name.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="FriendlyName" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The XML friendly element name.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="InfoCollection">
+    <xs:complexContent>
+      <xs:extension base="CountersType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Info" type="InfoType">
+            <xs:annotation>
+              <xs:documentation>
+                Represents the summary information for a certain XML element.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SummaryType">
+    <xs:complexContent>
+      <xs:extension base="InfoCollection">
+        <xs:attribute name="Result" type="ResultEnum" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The Result of processing the XML file.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Unprocessed" type="xs:int" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Number of unprocessed XML elements.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Started" type="xs:dateTime" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Date and Time when the import process has started.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Finished" type="xs:dateTime" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Date and Time when the import process has finished.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

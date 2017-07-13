@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SellableUnits"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import1/v1/library">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/library" schemaLocation="../library/Feature.xsd"/>
+
+  <xs:complexType name="SellableUnitsType">
+    <xs:sequence  minOccurs="0" maxOccurs="1">
+      <xs:element name="DefiningFeatureFamilies" type="lib:FamilyCodeCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Sellable Unit Defining Feature Families.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="SellableUnitsDefiningFeatureFamiliesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

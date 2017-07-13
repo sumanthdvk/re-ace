@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="importOptions"
+    targetNamespace="http://schemas.configit.com/ace/import/v1"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:lib="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:pr="http://schemas.configit.com/ace/import/v1/productrange">
+
+  <xs:include schemaLocation="Common.xsd"/>
+
+  <xs:simpleType name="KeyType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="MetadataType">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Property" type="MetadataPropertyType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Property.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MetadataPropertyType">
+    <xs:attribute name="Key" type="KeyType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The Key of the Property.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Value" type="NonEmptyString" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The Value of the Property.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,15 @@
+package com.mapper;
+
+import com.input.ConfigitAceImport.ProductRanges;
+import com.output.ProductRangeCollection;
+
+public class ProductRangeCollectionMapper {
+
+	public static void map(ProductRanges inProductRanges,
+			ProductRangeCollection outProductRanges) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

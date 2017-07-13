@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProductRangeFeatureAssociation"
+    targetNamespace="http://schemas.configit.com/ace/import/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import/v1/library">
+
+  <xs:include schemaLocation="setup/Event.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1/library" schemaLocation="../library/Feature.xsd"/>
+
+  <xs:complexType name="ProductRangeFeatureAssociationType">
+    <xs:complexContent>
+      <xs:extension base="lib:FeatureCodeType">
+        <xs:sequence  minOccurs="0" maxOccurs="1">
+          <xs:element name="Effectivities" type="EffectivityCollection">
+            <xs:annotation>
+              <xs:documentation>
+                Basic information about Product Range.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="Priority" type="xs:integer" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              An integer number indicating the priority of the Feature. This will impact the Configurator choice upon which Features to select.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ProductRangeFeatureAssociationCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Feature" type="ProductRangeFeatureAssociationType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Product Range Feature association.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

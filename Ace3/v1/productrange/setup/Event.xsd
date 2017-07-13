@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Event"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1">
+
+  <xs:include schemaLocation="Programme.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../../Common.xsd"/>
+
+  <xs:simpleType name="EventTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VolumeIn" />
+      <xs:enumeration value="PreVolume" />
+      <xs:enumeration value="Running" />
+      <xs:enumeration value="VolumeOut" />
+      <xs:enumeration value="EndOfTime" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="EventCodeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z0-9\|_\| \+\-]{1,128}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="EffectivityType">
+    <xs:attribute name="StartEvent" type="EventCodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Event on which the Effectivity starts.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="EndEvent" type="EventCodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Event on which the Effectivity ends.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="EffectivityCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Effectivity" type="EffectivityType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents an Effectivity.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EventType">
+    <xs:attribute name="Code" type="EventCodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Event. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:DescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The system description for the Event.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Date" type="v1:UtcDateTimeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The date of the Event.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="SecurityLevel" type="v1:SecurityLevelEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The security level of the Event. Can be one of: Proprietary, Confidential, Secret.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="EventType" type="EventTypeEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The type of the Event. Can be one of: Volume, PreVolume, Running.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Programme" type="v1:CodeType" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Programme this Event is associated with. Is required if the event is of type: Volume, PreVolume.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="EventCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Event" type="EventType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents an Event.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

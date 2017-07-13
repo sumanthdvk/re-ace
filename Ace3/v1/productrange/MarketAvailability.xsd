@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MarketAvailability"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import1/v1/library">
+
+  <xs:include schemaLocation="setup/Event.xsd"/>
+  <xs:include schemaLocation="setup/BrochureModel.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/library" schemaLocation="../library/Market.xsd"/>
+
+  <xs:complexType name="MarketAvailabilityType">
+    <xs:complexContent>
+      <xs:extension base="EffectivityType">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="AvailabilityRows" type="MarketAvailabilitySpanCollection">
+            <xs:annotation>
+              <xs:documentation>
+                Availability rows.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MarketAvailabilitySpanType">
+    <xs:complexContent>
+      <xs:extension base="EffectivityType">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="BrochureModelDerivatives" type="BrochureModelDerivativeCollection" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Brochure Model and Derivative combinations.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:unique name="MarketAvailabilityBrochureModelDerivativeIsUnique">
+              <xs:selector xpath="./*"/>
+              <xs:field xpath="@BrochureModel"/>
+              <xs:field xpath="@Derivative"/>
+            </xs:unique>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="Market" type="v1:CodeType" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The unique identifier for the Market. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="IsAvailable " type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Availability.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MarketAvailabilitySpanCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="MarketAvailabilitySpan" type="MarketAvailabilitySpanType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Market Availability.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ConfigitAceImportResult xmlns="http://schemas.configit.com/ace/import/result" MessageId="1233456789">
+  <Metadata xmlns:v1="http://schemas.configit.com/ace/import/v1">
+    <v1:Property Key="Key 1" Value="Value"/>
+    <v1:Property Key="Key 2" Value="Value"/>
+    <v1:Property Key="Key 3" Value="Value"/>
+    <v1:Property Key="Key 4" Value="Value"/>
+    <v1:Property Key="Key 5" Value="Value"/>
+  </Metadata>
+  <SchemaValidation>
+    <Error ElementName="FeatureFamily" LineNumber="123" LinePosition="456" Message="Houston, we have a problem." />
+    <Error ElementName="FeatureFamily" LineNumber="456" LinePosition="789" Message="Houston, we have another problem." />
+  </SchemaValidation>
+  <DataValidation>
+    <Error ProductRangeCode="X0" ElementName="ModelYearMapping" EntityInfo="ModelYearMapping - Feature: 'MY2007'." LineNumber="123" LinePosition="456" Message="Houston, we have a problem." />
+    <Warning ElementName="FeatureFamily" EntityInfo="FeatureFamily - Code: 'ABC', Description: 'abc'." LineNumber="123" LinePosition="456" Message="Houston, we have a problem." />
+    <Warning  ElementName="FeatureFamily" EntityInfo="FeatureFamily - Code: 'DEF', Description: 'def'." LineNumber="456" LinePosition="789" Message="Houston, we have a problem." />
+  </DataValidation>
+  <Summary Result="Failure" Started="2016-12-15T01:02:03" Finished="2016-12-15T02:03:04" Count="135" Succeeded="110" Failed="25" Unprocessed="0">
+    <Info ElementName="FeatureFamily" FriendlyName="Feature Family" Count="123" Succeeded="100" Failed="23"/>
+    <Info ProductRangeCode="X0" FriendlyName="Model Year Mapping" ElementName="ModelYearMapping" Count="11" Succeeded="9" Failed="2"/>
+    <Info ProductRangeCode="X0" FriendlyName="Feature Applicability" ElementName="FeatureApplicability" Count="1" Succeeded="1" Failed="0"/>
+  </Summary>
+</ConfigitAceImportResult>

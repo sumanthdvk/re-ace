@@ -1,0 +1,128 @@
+package com.mapper;
+
+import java.util.List;
+
+import com.input.ConfigitAceImport.ProductRanges;
+import com.input.ConfigitAceImport.ProductRanges.ProductRange;
+import com.output.EventType;
+import com.output.FamilyCodeType;
+import com.output.ProductRangeCollection;
+import com.output.ProductRangeType;
+
+public class ProductRangeCollectionMapper {
+
+	public static void map(ProductRanges inProductRanges, ProductRangeCollection outProductRanges) {
+		// TODO Auto-generated method stub
+		List<ProductRangeType> outProductRangeList = outProductRanges.getProductRange();
+		ProductRangeType outProductRange;
+		for (ProductRange inProductRange : inProductRanges.getProductRange()) {
+			outProductRange = new ProductRangeType();
+			
+			mapBasics(inProductRange,outProductRange);
+			mapProgrammes(inProductRange,outProductRange);
+			mapEvents(inProductRange,outProductRange);
+			mapFeatureAssociations(inProductRange,outProductRange);
+			mapModelYearMappings(inProductRange,outProductRange);
+			mapBrochureModels(inProductRange,outProductRange);
+			mapMarketAvailability(inProductRange,outProductRange);
+			mapFeatureApplicability(inProductRange,outProductRange);
+			mapRules(inProductRange,outProductRange);
+			mapSellableUnits(inProductRange,outProductRange);
+			mapDefaultConfiguratorLayout(inProductRange,outProductRange);
+			mapProductRangeProperties(inProductRange,outProductRange);
+			mapDeleteModelYearMappings(inProductRange,outProductRange);
+			mapDeleteRules(inProductRange,outProductRange);
+			mapCode(inProductRange,outProductRange);
+			
+			
+			outProductRangeList.add(outProductRange);
+		}
+	}
+
+	private static void mapCode(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapDeleteRules(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapDeleteModelYearMappings(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapProductRangeProperties(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapDefaultConfiguratorLayout(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapSellableUnits(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapRules(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapFeatureApplicability(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapMarketAvailability(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapBrochureModels(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapModelYearMappings(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapFeatureAssociations(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapEvents(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		inProductRange.getEvents().getEvent();
+		EventType event = new EventType();
+		
+		
+	}
+
+	private static void mapProgrammes(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mapBasics(ProductRange inProductRange, ProductRangeType outProductRange) {
+		// TODO Auto-generated method stub
+		FamilyCodeType familyCodeType = new FamilyCodeType();
+		familyCodeType.setCode(inProductRange.getBasics().getBrochureModelDefiningFeatureFamilies().getFamily().getCode());
+		outProductRange.getBasics().getBrochureModelDefiningFeatureFamilies().getFamily().add(familyCodeType);
+		outProductRange.getBasics().setBrand(inProductRange.getBasics().getBrand());
+		outProductRange.getBasics().setDescription(inProductRange.getBasics().getDescription());
+		outProductRange.getBasics().setFeature(inProductRange.getBasics().getFeature());
+		//outProductRange.getBasics().setProductGroup(inProductRange.getBasics().ge);
+		
+	}
+
+	
+}

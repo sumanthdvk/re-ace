@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PropertyValue"
+    targetNamespace="http://schemas.configit.com/ace/import/v1"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="Common.xsd"/>
+
+  <xs:complexType name="PropertyValueType">
+    <xs:attribute name="Name" type="NonEmptyString" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The name of the Property that the value corresponds to.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="StringPropertyValueType">
+    <xs:complexContent>
+      <xs:extension base="PropertyValueType">
+        <xs:attribute name="Value" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The value of the Property.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BooleanPropertyValueType">
+    <xs:complexContent>
+      <xs:extension base="PropertyValueType">
+        <xs:attribute name="Value" type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The value of the Property.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DateTimePropertyValueType">
+    <xs:complexContent>
+      <xs:extension base="PropertyValueType">
+        <xs:attribute name="Value" type="UtcDateTimeType" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The value of the Property.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DecimalPropertyValueType">
+    <xs:complexContent>
+      <xs:extension base="PropertyValueType">
+        <xs:attribute name="Value" type="xs:decimal" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The value of the Property.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IntegerPropertyValueType">
+    <xs:complexContent>
+      <xs:extension base="PropertyValueType">
+        <xs:attribute name="Value" type="xs:int" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The value of the Property.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="LongPropertyValueType">
+    <xs:complexContent>
+      <xs:extension base="PropertyValueType">
+        <xs:attribute name="Value" type="xs:long" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The value of the Property.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ShortPropertyValueType">
+    <xs:complexContent>
+      <xs:extension base="PropertyValueType">
+        <xs:attribute name="Value" type="xs:short" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The value of the Property.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="PropertyValueCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="StringProperty" type="StringPropertyValueType"/>
+      <xs:element name="BooleanProperty" type="BooleanPropertyValueType"/>
+      <xs:element name="DateTimeProperty" type="DateTimePropertyValueType"/>
+      <xs:element name="DecimalProperty" type="DecimalPropertyValueType"/>
+      <xs:element name="IntegerProperty" type="IntegerPropertyValueType"/>
+      <xs:element name="LongProperty" type="LongPropertyValueType"/>
+      <xs:element name="ShortProperty" type="ShortPropertyValueType"/>
+    </xs:choice>
+  </xs:complexType>
+
+</xs:schema>

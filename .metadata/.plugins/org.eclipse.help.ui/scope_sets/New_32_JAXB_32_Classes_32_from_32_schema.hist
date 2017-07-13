@@ -1,0 +1,4 @@
+#Tue May 30 15:24:35 IST 2017
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=New JAXB Classes from schema

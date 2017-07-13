@@ -1,0 +1,35 @@
+package com.mapper;
+
+import java.util.List;
+
+import com.input.ConfigitAceImport.ProductRanges;
+import com.input.ConfigitAceImport.ProductRanges.ProductRange;
+import com.output.FamilyCodeType;
+import com.output.ProductRangeCollection;
+import com.output.ProductRangeType;
+
+public class ProductRangeCollectionMapper {
+
+	public static void map(ProductRanges inProductRanges, ProductRangeCollection outProductRanges) {
+		// TODO Auto-generated method stub
+		List<ProductRangeType> outProductRangeList = outProductRanges.getProductRange();
+		ProductRangeType outProductRange;
+		for (ProductRange inProductRange : inProductRanges.getProductRange()) {
+			outProductRange = new ProductRangeType();
+			
+			//Mapping Basics
+			FamilyCodeType familyCodeType = new FamilyCodeType();
+			familyCodeType.setCode(inProductRange.getBasics().getBrochureModelDefiningFeatureFamilies().getFamily().getCode());
+			outProductRange.getBasics().getBrochureModelDefiningFeatureFamilies().getFamily().add(familyCodeType);
+			outProductRange.getBasics().setBrand(inProductRange.getBasics().getBrand());
+			outProductRange.getBasics().setDescription(inProductRange.getBasics().getDescription());
+			outProductRange.getBasics().setFeature(inProductRange.getBasics().getFeature());
+			
+			//Mapping 
+			
+			
+		}
+	}
+
+	
+}

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Brand"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/library"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../PropertyValue.xsd"/>
+
+  <xs:complexType name="BrandDescriptionCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Description" type="BrandDescriptionType">
+        <xs:annotation>
+          <xs:documentation>
+            The brand specific description for the Feature.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BrandDescriptionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="Brand" type="v1:CodeType" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The code of the Brand that the description is applicable to.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="BrandCodeType">
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Brand. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="BrandCodeCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Brand" type="BrandCodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Brand.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="ColorCodeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="#[a-zA-Z0-9]{6}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="BrandType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="PropertyValues" type="v1:PropertyValueCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Additional properties for the Brand.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Brand. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:LimitedDescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The system description for the Brand.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Color" type="ColorCodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The 6 character hexidecimal color code that will represent this Brand. Should begin with a hash (#).
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Feature" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Feature this Brand is contained within.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="BrandCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Brand" type="BrandType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Brand.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

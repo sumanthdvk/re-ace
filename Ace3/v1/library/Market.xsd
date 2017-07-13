@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Market"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/library"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1">
+
+  <xs:include schemaLocation="Brand.xsd"/>
+  <xs:include schemaLocation="Language.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../PropertyValue.xsd"/>
+
+  <xs:complexType name="MarketCodeType">
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Market. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="MarketCodeCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Market" type="MarketCodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Market.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MarketGroupCodeType">
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Market Group. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="MarketGroupCodeCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="MarketGroup" type="MarketGroupCodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Market Group.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MarketType">
+    <xs:all minOccurs="0" maxOccurs="1" >
+      <xs:element name="PropertyValues" type="v1:PropertyValueCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Additional properties for the Market.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Languages" type="MarketLanguageCodeCollection" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Languages for the Market.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BrandSpecificData" type="BrandSpecificDataCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Brand Specific Data for the Market.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Market. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:LimitedDescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The system description for the Market.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Feature" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Feature this Market is contained within.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="MarketCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Market" type="MarketType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Market.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MarketGroupType">
+    <xs:all minOccurs="0" maxOccurs="1">
+      <xs:element name="PropertyValues" type="v1:PropertyValueCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Additional properties for the Market.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Brands" type="BrandCodeCollection" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Brands that belong to this Market Group.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryMarketGroupsBrandsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Markets" type="MarketCodeCollection" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Markets that belong to this Market Group.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryMarketGroupsMarketsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Market Group. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:DescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The system description for the Market Group.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="MarketGroupCollection">
+    <xs:sequence>
+      <xs:element name="MarketGroup" type="MarketGroupType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Market Group.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BrandSpecificDataType">
+    <xs:attribute name="Brand" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Brand to which this Brand Specific Data relates.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code which will replace the original Brand code in this Market.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="BrandSpecificDataCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="BrandSpecificData" type="BrandSpecificDataType" >
+        <xs:annotation>
+          <xs:documentation>
+            Represents Brand Specific Data.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="MarketLanguageCodeCollection">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Language" type="LanguageCodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Language.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

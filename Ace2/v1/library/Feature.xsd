@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Feature"
+    targetNamespace="http://schemas.configit.com/ace/import/v1/library"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1">
+
+  <xs:include schemaLocation="CodeSet.xsd"/>
+  <xs:include schemaLocation="Brand.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../PropertyValue.xsd"/>
+
+  <xs:simpleType name="FeatureFamilyTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Feature" />
+      <xs:enumeration value="Brand" />
+      <xs:enumeration value="Market" />
+      <xs:enumeration value="ProductRange" />
+      <xs:enumeration value="BrochureModel" />
+      <xs:enumeration value="ModelYear" />
+      <xs:enumeration value="Derivative" />
+      <xs:enumeration value="BuildPhase" />
+      <xs:enumeration value="Pack" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LifecycleEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Concept" />
+      <xs:enumeration value="Enabled" />
+      <xs:enumeration value="Retired" />
+      <xs:enumeration value="Obsolete" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SelectionTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Single" />
+      <xs:enumeration value="Multi" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="FeatureType">
+    <xs:all minOccurs="0" maxOccurs="1">
+      <xs:element name="Descriptions" type="BrandDescriptionCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Additional descriptions for the Feature.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryFeatureDescriptionsBrandIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Brand"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="CodeSetMappings" type="CodeSetMappingCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Additional codes for the Feature in different Code Sets.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryFeatureCodeSetMappingsCodeSetIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@CodeSet"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="PropertyValues" type="v1:PropertyValueCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Additional properties for the Feature
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Feature. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:DescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The system description for the Feature.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="FeatureFamily" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Feature Family this Feature is contained within.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Lifecycle" type="LifecycleEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The life cycle this Feature is in. Can be one of: Concept, Enabled, Retired, Obsolete. (Default = Enabled)
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="SecurityLevel" type="v1:SecurityLevelEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The security level of the Feature. Can be one of: Proprietary, Confidential, Secret. (Default = Proprietary)
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="FeatureCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Feature" type="FeatureType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Feature.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FeatureFamilyType">
+    <xs:all minOccurs="0" maxOccurs="1">
+      <xs:element name="CodeSetMappings" type="CodeSetMappingCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Additional codes for the Feature Family in different Code Sets.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryFeatureFamilyCodeSetMappingsCodeSetIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@CodeSet"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="PropertyValues" type="v1:PropertyValueCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Additional properties for the Feature Family
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Feature Family. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:DescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The system description for the Feature Family.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="FeatureFamilyType" type="FeatureFamilyTypeEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The type of entity this Feature Family's features represent. (Default = Feature)
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="SelectionType" type="SelectionTypeEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies whether the Feature Family can have multiple Features assigned
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="LessFeature" type="v1:CodeType" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Feature in this Feature Family which is the LESS feature.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Lifecycle" type="LifecycleEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The life cycle this Feature Family is in. Can be one of: Concept, Enabled, Retired, Obsolete. (Default = Enabled)
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="SecurityLevel" type="v1:SecurityLevelEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The security level of the Feature Family. Can be one of: Proprietary, Confidential, Secret. (Default = Proprietary)
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="FeatureFamilyCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="FeatureFamily" type="FeatureFamilyType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Feature Family.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FeatureCodeType">
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Feature. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="FeatureCodeCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Feature" type="FeatureCodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Feature.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FamilyCodeType">
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Family. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="FamilyCodeCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Family" type="FamilyCodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Family.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

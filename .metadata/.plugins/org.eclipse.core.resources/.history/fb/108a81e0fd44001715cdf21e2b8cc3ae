@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SimpleTypes"
+    targetNamespace="http://schemas.configit.com/ace/import/v1"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="CodeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z0-9_/]{1,20}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="UtcDateTimeType">
+    <xs:restriction base="xs:dateTime">
+      <xs:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z\b" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="NotEmptyCodeCollection">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Code" type="CodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Code.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CodeCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Code" type="CodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Code.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="CodeLengthType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DescriptionType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LimitedDescriptionType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NameType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NonEmptyString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SecurityLevelEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Proprietary" />
+      <xs:enumeration value="Confidential" />
+      <xs:enumeration value="Secret" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

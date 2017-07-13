@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Basics"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import1/v1/library">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/library" schemaLocation="../../library/Feature.xsd"/>
+
+  <xs:complexType name="BasicsType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="BrochureModelDefiningFeatureFamilies" type="lib:FamilyCodeCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Feature Family code which defines the Brochure Models.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesBasicsBrochureModelDefiningFeatureFamiliesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Description" type="v1:LimitedDescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The system description for the Product Range.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Brand" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Brand this Product Range belongs.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Feature" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Feature that the Product Range is related to.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ProductGroup" type="v1:CodeType">
+      <xs:annotation>
+        <xs:documentation>
+          The code of the Product Group that the Product Range is related to.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+</xs:schema>

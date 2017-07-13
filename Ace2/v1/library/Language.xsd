@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Language"
+    targetNamespace="http://schemas.configit.com/ace/import/v1/library"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1">
+
+    <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../PropertyValue.xsd"/>
+    <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../Common.xsd"/>
+
+  <xs:complexType name="LanguageCodeType">
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Language. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LanguageCodeCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Language" type="LanguageCodeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Language.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LanguageType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="PropertyValues" type="v1:PropertyValueCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Additional properties for the Language.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Language. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Name" type="v1:NameType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The name of the Language.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LanguageCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Language" type="LanguageType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Language.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

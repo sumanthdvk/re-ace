@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BrochureModel"
+    targetNamespace="http://schemas.configit.com/ace/import/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import/v1/library">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1" schemaLocation="../../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import/v1/library" schemaLocation="../../library/Feature.xsd"/>
+
+  <xs:complexType name="BrochureModelType">
+    <xs:all minOccurs="1" maxOccurs="1">
+      <xs:element name="BrochureModelDefiningFeatures" type="lib:FeatureCodeCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Features defining the Brochure Model. There should be one Feature for each Brochure Model Defining Feature Family. Each BrochureModelDefiningFeatures collection should be unique.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesBrochureModelDefiningFeaturesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Derivatives" type="lib:FeatureCodeCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Features belonging to the Derivative Family.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesBrochureModelDerivativesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Brochure Model. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:LimitedDescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The system description for the Brochure Model.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Feature" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Backing Feature code of the Brochure Model. This Feature should belong to a Family of type Brochure Model.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="BrochureModelCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="BrochureModel" type="BrochureModelType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Brochure Model.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BrochureModelDerivativeType">
+    <xs:attribute name="BrochureModel" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Brochure Model. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Derivative" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Derivative Feature. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="BrochureModelDerivativeCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="BrochureModelDerivative" type="BrochureModelDerivativeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Brochure Model and Derivative combination.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

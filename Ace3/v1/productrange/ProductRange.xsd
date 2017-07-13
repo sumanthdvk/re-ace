@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProductRange"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1"
+    xmlns:del="http://schemas.configit.com/ace/import1/v1/delete"
+    xmlns:lib="http://schemas.configit.com/ace/import1/v1/library">
+
+  <xs:include schemaLocation="setup/Basics.xsd"/>
+  <xs:include schemaLocation="setup/BrochureModel.xsd"/>
+  <xs:include schemaLocation="setup/Event.xsd"/>
+  <xs:include schemaLocation="setup/Programme.xsd"/>
+  <xs:include schemaLocation="ProductRangeFeatureAssociation.xsd"/>
+  <xs:include schemaLocation="MarketAvailability.xsd"/>
+  <xs:include schemaLocation="FeatureApplicability.xsd"/>
+  <xs:include schemaLocation="ModelYearMapping.xsd"/>
+  <xs:include schemaLocation="Rule.xsd"/>
+  <xs:include schemaLocation="SellableUnits.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../PropertyValue.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/delete" schemaLocation="../delete/ModelYearMappings.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/delete" schemaLocation="../delete/Rules.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/library" schemaLocation="../library/Property.xsd"/>
+
+  <xs:complexType name="ProductRangePropertiesType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="PropertyValues" type="v1:PropertyValueCollection">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a collection of Property Values.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProductRangeType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Basics" type="BasicsType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Basic information about Product Range.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Programmes" type="ProgrammeCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Programmes.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesProgrammesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Events" type="EventCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Events.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesEventsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="FeatureAssociations" type="ProductRangeFeatureAssociationCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Product Range Feature association.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesFeatureAssociationsFeatureCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="ModelYearMappings" type="ModelYearMappingCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Model Year Mapping.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesModelYearMappingsFeatureIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Feature"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="BrochureModels" type="BrochureModelCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Brochure Models.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesBrochureModelsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+        <xs:unique name="ProductRangesBrochureModelsFeatureIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Feature"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="MarketAvailability" type="MarketAvailabilitySpanCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Information about Market Availability.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesMarketAvailabilityIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Market"/>
+          <xs:field xpath="@IsAvailable"/>
+          <xs:field xpath="@StartEvent"/>
+          <xs:field xpath="@EndEvent"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="FeatureApplicability" type="FeatureApplicabilityType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Information about Feature Applicability.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Rules" type="RuleType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Rules.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SellableUnits" type="SellableUnitsType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Sellable unit defining feature families.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DefaultConfiguratorLayout" type="DefaultConfiguratorLayoutType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Default Configurator Layout for product range.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProductRangeProperties" type="ProductRangePropertiesType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Additional properties for the Product Range.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DeleteModelYearMappings" type="del:DeleteModelYearMappingCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Model Year Mappings to delete.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesDeleteModelYearMappingsFeatureIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Feature"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="DeleteRules" type="del:DeleteRulesCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Rules to delete.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesDeleteRulesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Code" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The unique identifier for the Product Range. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ProductRangeCollection">
+    <xs:sequence  minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ProductRange" type="ProductRangeType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Product Range.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DefaultConfiguratorLayoutType">
+    <xs:attribute name="ConfiguratorLayout" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The default configurator layout for product range
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="import"
+    targetNamespace="http://schemas.configit.com/ace/import1"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1"
+    xmlns:mstns="http://schemas.configit.com/ace/import1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:pr="http://schemas.configit.com/ace/import1/v1/productrange">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/library" schemaLocation="v1/library/Library.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/productrange" schemaLocation="v1/productrange/ProductRange.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="v1/ImportOptions.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="v1/Metadata.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="v1/ImportDetails.xsd"/>
+
+  <xs:complexType name="ConfigitAceImportType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="ImportDetails" type="v1:ImportDetailsType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Import Details.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Metadata" type="v1:MetadataType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Metadata to be stored with the import.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="MetadataKeyIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Key"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="DataValidationOptions" type="v1:DataValidationOptionsType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Options to control Data Validation.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostImportValidationOptions" type="v1:PostImportValidationOptionsType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Options to control Post Import Data Validation.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Library" type="lib:LibraryType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Contains the contents of the Library which includes Features, Feature Families
+            and Code Set Mappings.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProductRanges" type="pr:ProductRangeCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Contains the contents of the Product Range.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="ProductRangesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ConfigitAceImport" type="ConfigitAceImportType">
+    <xs:annotation>
+      <xs:documentation>
+        Root element. Contains the Library and Product ranges
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>

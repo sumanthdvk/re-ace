@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FeatureApplicability"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/productrange"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/productrange"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import1/v1/library">
+
+  <xs:include schemaLocation="setup/Event.xsd"/>
+  <xs:include schemaLocation="setup/BrochureModel.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/library" schemaLocation="../library/Feature.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/library" schemaLocation="../library/Market.xsd"/>
+
+  <xs:simpleType name="AvailabilityEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Available" />
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="Unavailable" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MarketingValueEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unavailable" />
+      <xs:enumeration value="Optional" />
+      <xs:enumeration value="Standard" />
+      <xs:enumeration value="Implied" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="FeatureApplicabilityType">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="IncludedFamilies" type="IncludedFamilyCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Family codes controlled by Feature Applicability.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="FeatureApplicabilityIncludedFamiliesFamilyCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="FeatureApplicabilitySpans" type="FeatureApplicabilitySpanCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Information about Feature Applicability.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IncludedFamilyType">
+    <xs:complexContent>
+      <xs:extension base="lib:FamilyCodeType">
+        <xs:attribute name="StartEvent" type="EventCodeType" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The unique identifier for the Event on which the Effectivity starts.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IncludedFamilyCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Family" type="IncludedFamilyType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Feature Family.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FeatureApplicabilitySpanType">
+    <xs:complexContent>
+      <xs:extension base="EffectivityType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Markets" type="lib:MarketCodeCollection" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Market codes associated with a list of Brochure Model and Derivative combinations.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:unique name="FeatureApplicabilityMarketsCodeIsUnique">
+              <xs:selector xpath="./*"/>
+              <xs:field xpath="@Code"/>
+            </xs:unique>
+          </xs:element>
+          <xs:element name="BrochureModelDerivatives" type="BrochureModelDerivativeCollection" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Brochure Model and Derivative combinations.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:unique name="FeatureApplicabilityBrochureModelDerivativeIsUnique">
+              <xs:selector xpath="./*"/>
+              <xs:field xpath="@BrochureModel"/>
+              <xs:field xpath="@Derivative"/>
+            </xs:unique>
+          </xs:element>
+          <xs:element name="Features" type="FeatureApplicabilityInfoCollection" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Represents the Feature Applicability information for a Family.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:unique name="FeatureApplicabilityFeatureCodeIsUnique">
+              <xs:selector xpath="./*"/>
+              <xs:field xpath="@Code"/>
+            </xs:unique>
+          </xs:element>
+        </xs:choice>
+        <xs:attribute name="Family" type="v1:CodeType" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              The unique identifier for the Family. Limited to alphanumeric characters and underscores with a maximum length of 20 characters.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="FeatureApplicabilitySpanCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="FeatureApplicabilitySpan" type="FeatureApplicabilitySpanType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Feature Applicability.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FeatureApplicabilityInfoType">
+    <xs:complexContent>
+      <xs:extension base="lib:FeatureCodeType">
+        <xs:attribute name="Availability" type="AvailabilityEnum" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Availability of the Feature. Can be Default, Available.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="MarketingValue" type="MarketingValueEnum" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Marketing Value of the Feature. Can be Standard, Optional, Implied or Unavailable.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="FeatureApplicabilityInfoCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Feature" type="FeatureApplicabilityInfoType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Feature Applicability.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Tue May 30 2017 19:08:17 GMT+0530 (India Standard Time) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="ConfigitAceImport">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="ImportDetails">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="ImportId" type="xs:string"></xs:element>
+                                             <xs:element name="Description" type="xs:string"></xs:element>
+                                             <xs:element name="Source" type="xs:string"></xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="DataValidationOptions">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="ModelYearMapping">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="Validation" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Rule">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="Validation" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="AllowAceRules" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="PostImportValidationOptions">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="CompileProductRanges"></xs:element>
+                                             <xs:element name="PreventPromotionIfMasterChanged"></xs:element>
+                                             <xs:element name="CreateWorkItem">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="OnFailure" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="OnSuccess" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="Library">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="Languages">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="Language">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Name" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="FeatureFamilies">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="FeatureFamily" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="FeatureFamilyType" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="SelectionType" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Lifecycle" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="SecurityLevel" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Features">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="Feature" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="FeatureFamily" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Lifecycle" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="SecurityLevel" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Brands">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="Brand">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Color" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Feature" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Markets">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="Market" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="Languages">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="Language">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="Code" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Feature" type="xs:int"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="MarketGroups">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="MarketGroup" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="Markets">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="Market" maxOccurs="unbounded">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:attribute name="Code" type="xs:int"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="Brands">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="Brand">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="ConfiguratorLayouts">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="ConfiguratorLayout">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="LayoutTabs">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="LayoutTab">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="LayoutSections">
+                                                                                                                           <xs:complexType>
+                                                                                                                                 <xs:sequence>
+                                                                                                                                       <xs:element name="LayoutSection" maxOccurs="unbounded">
+                                                                                                                                             <xs:complexType>
+                                                                                                                                                   <xs:sequence>
+                                                                                                                                                         <xs:element name="LayoutFeatureFamilies">
+                                                                                                                                                               <xs:complexType>
+                                                                                                                                                                     <xs:sequence>
+                                                                                                                                                                           <xs:element name="LayoutFeatureFamily" maxOccurs="unbounded">
+                                                                                                                                                                                 <xs:complexType>
+                                                                                                                                                                                       <xs:sequence>
+                                                                                                                                                                                             <xs:element name="LayoutFeatures">
+                                                                                                                                                                                                   <xs:complexType>
+                                                                                                                                                                                                         <xs:sequence>
+                                                                                                                                                                                                               <xs:element name="LayoutFeature" maxOccurs="unbounded">
+                                                                                                                                                                                                                     <xs:complexType>
+                                                                                                                                                                                                                           <xs:attribute name="Feature" type="xs:string"></xs:attribute>
+                                                                                                                                                                                                                           <xs:attribute name="Position" type="xs:int"></xs:attribute>
+                                                                                                                                                                                                                     </xs:complexType>
+                                                                                                                                                                                                               </xs:element>
+                                                                                                                                                                                                         </xs:sequence>
+                                                                                                                                                                                                   </xs:complexType>
+                                                                                                                                                                                             </xs:element>
+                                                                                                                                                                                       </xs:sequence>
+                                                                                                                                                                                       <xs:attribute name="FeatureFamily" type="xs:string"></xs:attribute>
+                                                                                                                                                                                       <xs:attribute name="CustomSort" type="xs:string"></xs:attribute>
+                                                                                                                                                                                       <xs:attribute name="Position" type="xs:int"></xs:attribute>
+                                                                                                                                                                                 </xs:complexType>
+                                                                                                                                                                           </xs:element>
+                                                                                                                                                                     </xs:sequence>
+                                                                                                                                                               </xs:complexType>
+                                                                                                                                                         </xs:element>
+                                                                                                                                                   </xs:sequence>
+                                                                                                                                                   <xs:attribute name="Name" type="xs:string"></xs:attribute>
+                                                                                                                                                   <xs:attribute name="Position" type="xs:int"></xs:attribute>
+                                                                                                                                             </xs:complexType>
+                                                                                                                                       </xs:element>
+                                                                                                                                 </xs:sequence>
+                                                                                                                           </xs:complexType>
+                                                                                                                     </xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                               <xs:attribute name="Name" type="xs:string"></xs:attribute>
+                                                                                                               <xs:attribute name="Position" type="xs:int"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="Code" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="Name" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="ProductRanges">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="ProductRange" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="Basics">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="BrochureModelDefiningFeatureFamilies">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="Family">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Brand" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Feature" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="Events">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="Event" maxOccurs="unbounded">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="Date" type="xs:dateTime"></xs:attribute>
+                                                                                             <xs:attribute name="SecurityLevel" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="EventType" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="FeatureAssociations">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="Feature" maxOccurs="unbounded">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="Effectivities">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="Effectivity">
+                                                                                                                           <xs:complexType>
+                                                                                                                                 <xs:attribute name="StartEvent" type="xs:string"></xs:attribute>
+                                                                                                                                 <xs:attribute name="EndEvent" type="xs:string"></xs:attribute>
+                                                                                                                           </xs:complexType>
+                                                                                                                     </xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                             <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="Priority" type="xs:int"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="BrochureModels">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="BrochureModel" maxOccurs="unbounded">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="BrochureModelDefiningFeatures">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="Feature">
+                                                                                                                           <xs:complexType>
+                                                                                                                                 <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                                                           </xs:complexType>
+                                                                                                                     </xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                                   <xs:element name="Derivatives">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="Feature">
+                                                                                                                           <xs:complexType>
+                                                                                                                                 <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                                                           </xs:complexType>
+                                                                                                                     </xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                             <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="Feature" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="MarketAvailability">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="MarketAvailabilitySpan" maxOccurs="unbounded">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="BrochureModelDerivatives">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="BrochureModelDerivative" maxOccurs="unbounded">
+                                                                                                                           <xs:complexType>
+                                                                                                                                 <xs:attribute name="BrochureModel" type="xs:string"></xs:attribute>
+                                                                                                                                 <xs:attribute name="Derivative" type="xs:string"></xs:attribute>
+                                                                                                                           </xs:complexType>
+                                                                                                                     </xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                             <xs:attribute name="Market" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="IsAvailable" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="StartEvent" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="EndEvent" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="FeatureApplicability">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="IncludedFamilies">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="Family" maxOccurs="unbounded">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                                               <xs:attribute name="StartEvent" type="xs:string"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="FeatureApplicabilitySpans">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="FeatureApplicabilitySpan" maxOccurs="unbounded">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="Markets">
+                                                                                                                           <xs:complexType>
+                                                                                                                                 <xs:sequence>
+                                                                                                                                       <xs:element name="Market" maxOccurs="unbounded">
+                                                                                                                                             <xs:complexType>
+                                                                                                                                                   <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                                                                             </xs:complexType>
+                                                                                                                                       </xs:element>
+                                                                                                                                 </xs:sequence>
+                                                                                                                           </xs:complexType>
+                                                                                                                     </xs:element>
+                                                                                                                     <xs:element name="BrochureModelDerivatives">
+                                                                                                                           <xs:complexType>
+                                                                                                                                 <xs:sequence>
+                                                                                                                                       <xs:element name="BrochureModelDerivative" maxOccurs="unbounded">
+                                                                                                                                             <xs:complexType>
+                                                                                                                                                   <xs:attribute name="BrochureModel" type="xs:string"></xs:attribute>
+                                                                                                                                                   <xs:attribute name="Derivative" type="xs:string"></xs:attribute>
+                                                                                                                                             </xs:complexType>
+                                                                                                                                       </xs:element>
+                                                                                                                                 </xs:sequence>
+                                                                                                                           </xs:complexType>
+                                                                                                                     </xs:element>
+                                                                                                                     <xs:element name="Features">
+                                                                                                                           <xs:complexType>
+                                                                                                                                 <xs:sequence>
+                                                                                                                                       <xs:element name="Feature">
+                                                                                                                                             <xs:complexType>
+                                                                                                                                                   <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                                                                                   <xs:attribute name="Availability" type="xs:string"></xs:attribute>
+                                                                                                                                                   <xs:attribute name="MarketingValue" type="xs:string"></xs:attribute>
+                                                                                                                                             </xs:complexType>
+                                                                                                                                       </xs:element>
+                                                                                                                                 </xs:sequence>
+                                                                                                                           </xs:complexType>
+                                                                                                                     </xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                               <xs:attribute name="Family" type="xs:string"></xs:attribute>
+                                                                                                               <xs:attribute name="StartEvent" type="xs:string"></xs:attribute>
+                                                                                                               <xs:attribute name="EndEvent" type="xs:string"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="Rules">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="TextRules">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="TextRule" maxOccurs="unbounded">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="Body" type="xs:string"></xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                               <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                                                                               <xs:attribute name="Description" type="xs:string"></xs:attribute>
+                                                                                                               <xs:attribute name="Intent" type="xs:string"></xs:attribute>
+                                                                                                               <xs:attribute name="StartEvent" type="xs:string"></xs:attribute>
+                                                                                                               <xs:attribute name="EndEvent" type="xs:string"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="DefaultConfiguratorLayout">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="ConfiguratorLayout" type="xs:int"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                         <xs:attribute name="Code" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>

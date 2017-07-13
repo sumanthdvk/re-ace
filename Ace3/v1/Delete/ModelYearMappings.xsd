@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DeleteModelYearMapping"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/delete"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/delete"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/delete"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1"
+    xmlns:pr="http://schemas.configit.com/ace/import1/v1/productrange">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/productrange" schemaLocation="../productrange/setup/Event.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../Common.xsd"/>
+
+  <xs:complexType name="DeleteModelYearMappingType">
+    <xs:attribute name="Feature" type="v1:CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Model Year Feature Code. The Feature should belong to a family of type Model Year.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="DeleteModelYearMappingCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ModelYearMapping" type="DeleteModelYearMappingType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Model Year Mapping to delete.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

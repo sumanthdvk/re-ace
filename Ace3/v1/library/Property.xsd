@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Property"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/library"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1">
+
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../Common.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../PropertyValue.xsd"/>
+
+  <xs:simpleType name="PropertyTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="String" />
+      <xs:enumeration value="Boolean" />
+      <xs:enumeration value="DateTime" />
+      <xs:enumeration value="Decimal" />
+      <xs:enumeration value="Integer" />
+      <xs:enumeration value="Long" />
+      <xs:enumeration value="Short" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="PropertyType">
+    <xs:attribute name="Name" type="v1:NameType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The name of the Property.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Description" type="v1:DescriptionType" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The description of the Property.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DataType" type="PropertyTypeEnum" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The data type of the Property.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="AllowDuplicateValues" type="xs:boolean" use="optional" default="false">
+      <xs:annotation>
+        <xs:documentation>
+          Allow this Property to contain duplicated values.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="PropertyCollection">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Property" type="PropertyType">
+        <xs:annotation>
+          <xs:documentation>
+            Represents a Property definition.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>  
+
+</xs:schema>

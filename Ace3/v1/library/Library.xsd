@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Library"
+    targetNamespace="http://schemas.configit.com/ace/import1/v1/library"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:mstns="http://schemas.configit.com/ace/import1/v1/library"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:v1="http://schemas.configit.com/ace/import1/v1"
+    xmlns:del="http://schemas.configit.com/ace/import1/v1/delete">
+
+  <xs:include schemaLocation="Brand.xsd"/>
+  <xs:include schemaLocation="CodeSet.xsd"/>
+  <xs:include schemaLocation="Feature.xsd"/>
+  <xs:include schemaLocation="Language.xsd"/>
+  <xs:include schemaLocation="Market.xsd"/>
+  <xs:include schemaLocation="ProductGroup.xsd"/>
+  <xs:include schemaLocation="ConfiguratorLayout.xsd"/>
+  <xs:include schemaLocation="Property.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1" schemaLocation="../PropertyValue.xsd"/>
+  <xs:import namespace="http://schemas.configit.com/ace/import1/v1/delete" schemaLocation="../delete/MarketGroups.xsd"/>
+
+  <xs:complexType name="LibraryType">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Properties" type="PropertyCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Properties.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryPropertiesNameIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="CodeSets" type="CodeSetCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Code Sets.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryCodeSetsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Languages" type="LanguageCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Languages.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryLanguagesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="FeatureFamilies" type="FeatureFamilyCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Feature Families.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryFeatureFamiliesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Features" type="FeatureCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Features
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryFeaturesCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>     
+      <xs:element name="Brands" type="BrandCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Brands.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryBrandsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+        <xs:unique name="LibraryBrandsFeatureIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Feature"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Markets" type="MarketCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Markets.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryMarketsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+        <xs:unique name="LibraryMarketsFeatureIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Feature"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="MarketGroups" type="MarketGroupCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Market Groups.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryMarketGroupsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="ConfiguratorLayouts" type="ConfiguratorLayoutCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Configurator Layouts.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryConfiguratorLayoutsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="ProductGroups" type="ProductGroupCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Product Groups
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DeleteMarketGroups" type="del:DeleteMarketGroupCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            List of Market Groups to delete.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:unique name="LibraryDeleteMarketGroupsCodeIsUnique">
+          <xs:selector xpath="./*"/>
+          <xs:field xpath="@Code"/>
+        </xs:unique>     
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

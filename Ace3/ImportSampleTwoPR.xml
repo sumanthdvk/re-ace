@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ConfigitAceImport xmlns="http://schemas.configit.com/ace/import">
+  <ImportDetails xmlns:v1="http://schemas.configit.com/ace/import/v1">
+    <v1:ImportId>Import id</v1:ImportId>
+    <v1:Description>Sample XmlFile with two Product Ranges</v1:Description>
+    <v1:Source>Sample source</v1:Source>
+  </ImportDetails>
+  <Metadata xmlns:v1="http://schemas.configit.com/ace/import/v1">
+    <v1:Property Key="Key 1" Value="Value"/>
+    <v1:Property Key="Key 2" Value="Value"/>
+  </Metadata>
+  <Library
+    xmlns="http://schemas.configit.com/ace/import"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:pr="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:del="http://schemas.configit.com/ace/import/v1/delete">
+    <lib:Properties>
+      <lib:Property Name="PROP1" DataType="String" Description="Property #1" AllowDuplicateValues="true"/>
+      <lib:Property Name="PROP7" DataType="Decimal" Description="Property #10" AllowDuplicateValues="true"/>
+    </lib:Properties>
+    <lib:CodeSets>
+      <lib:CodeSet Code="CS1" Description="Code Set #1"/>
+      <lib:CodeSet Code="CS2" Description="Code Set #2"/>
+    </lib:CodeSets>
+    <lib:Languages>
+      <lib:Language Code="EN" Name="English" />
+      <lib:Language Code="FR" Name="French" />
+    </lib:Languages>
+    <lib:FeatureFamilies>
+      <lib:FeatureFamily Code="PRODRANGE" Description="Product ranges" FeatureFamilyType="ProductRange" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:FeatureFamily Code="HEATSEAT" Description="Heated seats" FeatureFamilyType="Feature" SelectionType="Single" LessFeature="N_HEATSEAT_FEAT" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:FeatureFamily Code="HEATWINDSCR" Description="Heated windscreen" FeatureFamilyType="Feature" SelectionType="Single" LessFeature="N_HEATWINDSCR_FEAT" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:FeatureFamily Code="COLOR" Description="Colors" FeatureFamilyType="Feature" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:FeatureFamily Code="CCPACK" Description="Cold climate pack" FeatureFamilyType="Pack" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:FeatureFamily Code="WHLACC" Description="Wheel accessories" FeatureFamilyType="Feature" SelectionType="Multi" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:FeatureFamily Code="BODYSTYLE" Description="Body style" FeatureFamilyType="Feature" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:FeatureFamily Code="BRND" Description="Brand" FeatureFamilyType="Brand" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:FeatureFamily Code="MRKT" Description="Market" FeatureFamilyType="Market" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:FeatureFamily Code="DERIV" Description="Derivatives" FeatureFamilyType="Derivative" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:FeatureFamily Code="WHEEL" Description="Wheels" FeatureFamilyType="Feature" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:FeatureFamily Code="TYRE" Description="Tyres" FeatureFamilyType="Feature" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:FeatureFamily Code="BM" Description="Brochure Models" FeatureFamilyType="BrochureModel" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:FeatureFamily Code="MY" Description="Model Years" FeatureFamilyType="ModelYear" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:FeatureFamily Code="BP" Description="Build Phases" FeatureFamilyType="BuildPhase" SelectionType="Single" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+    </lib:FeatureFamilies>
+    <lib:Features>
+      <lib:Feature Code="LR_FEAT" Description="Land Rover" FeatureFamily="BRND" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:Feature Code="UK_FEAT" Description="United Kingdom" FeatureFamily="MRKT" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:Feature Code="US_FEAT" Description="United States" FeatureFamily="MRKT" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:Feature Code="INDIA_FEAT" Description="India" FeatureFamily="MRKT" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:Feature Code="X0_FEAT" Description="X0" FeatureFamily="PRODRANGE" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:Feature Code="X1_FEAT" Description="X1" FeatureFamily="PRODRANGE" Lifecycle="Enabled" SecurityLevel="Proprietary"/>
+      <lib:Feature Code="N_HEATSEAT_FEAT" Description="No Heatead Seats" FeatureFamily="HEATSEAT" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="Y_HEATSEAT_FEAT" Description="Heatead Seats" FeatureFamily="HEATSEAT" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="N_HEATWINDSCR_FEAT" Description="No Heatead Windscreen" FeatureFamily="HEATWINDSCR" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="Y_HEATWINDSCR_FEAT" Description="Heatead Windscreen" FeatureFamily="HEATWINDSCR" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="RED_FEAT" Description="Red" FeatureFamily="COLOR" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="GREEN_FEAT" Description="Green" FeatureFamily="COLOR" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="BLUE_FEAT" Description="Blue" FeatureFamily="COLOR" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="N_CCPACK_FEAT" Description="No Cold Climate Pack" FeatureFamily="CCPACK" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="Y_CCPACK_FEAT" Description="Cold Climate Pack" FeatureFamily="CCPACK" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="FRT_MUD_FEAT" Description="Front Mud Flap" FeatureFamily="WHLACC" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="REAR_MUD_FEAT" Description="Rear Mud Flap" FeatureFamily="WHLACC" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="FRT_MUD_DESIGN_FEAT" Description="Designer Front Mud Flap" FeatureFamily="WHLACC" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="REAR_MUD_DESIGN_FEAT" Description="Designer Rear Mud Flap" FeatureFamily="WHLACC" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="3DR_FEAT" Description="3 door" FeatureFamily="BODYSTYLE" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="5DR_FEAT" Description="5 door" FeatureFamily="BODYSTYLE" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="BASIC_FEAT" Description="Basic" FeatureFamily="DERIV" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="LUX_FEAT" Description="Luxury" FeatureFamily="DERIV" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="WHL17_FEAT" Description="17 inch wheels" FeatureFamily="WHEEL" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="WHL19_FEAT" Description="19 inch wheels" FeatureFamily="WHEEL" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="TYRE17_FEAT" Description="17 inch wheels tyres" FeatureFamily="TYRE" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="TYRE19_FEAT" Description="19 inch wheels tyres" FeatureFamily="TYRE" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="BM1_FEAT" Description="Brochure Model 1" FeatureFamily="BM" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="BM2_FEAT" Description="Brochure Model 2" FeatureFamily="BM" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="BM3_FEAT" Description="Brochure Model 3" FeatureFamily="BM" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="BM4_FEAT" Description="Brochure Model 4" FeatureFamily="BM" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="MY2017_FEAT" Description="2017 Model Year" FeatureFamily="MY" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="BP2017_TT_FEAT" Description="2017 Build Phase Tooling Trial" FeatureFamily="BP" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="BP2017_PP_FEAT" Description="2017 Build Phase Pilot Production" FeatureFamily="BP" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+      <lib:Feature Code="BP2017_VOL_FEAT" Description="2017 Build Phase Volume Production" FeatureFamily="BP" Lifecycle="Enabled" SecurityLevel="Proprietary" />
+    </lib:Features>
+    <lib:Brands>
+      <lib:Brand Code="LR" Description="Land Rover" Color="#0000FF" Feature="LR_FEAT" />
+    </lib:Brands>
+    <lib:Markets>
+      <lib:Market Code="UK" Description="United Kingdom" Feature="UK_FEAT">
+        <lib:Languages>
+          <lib:Language Code="EN"/>
+        </lib:Languages>
+      </lib:Market>
+      <lib:Market Code="US" Description="United States" Feature="US_FEAT">
+        <lib:Languages>
+          <lib:Language Code="EN"/>
+        </lib:Languages>
+      </lib:Market>
+      <lib:Market Code="INDIA" Description="India" Feature="INDIA_FEAT">
+        <lib:Languages>
+          <lib:Language Code="EN"/>
+        </lib:Languages>
+      </lib:Market>
+    </lib:Markets>
+    <lib:MarketGroups>
+      <lib:MarketGroup Code="ALLMRKT" Description="All Markets">
+        <lib:Markets>
+          <lib:Market Code="UK" />
+        </lib:Markets>
+        <lib:Brands>
+          <lib:Brand Code="LR" />
+        </lib:Brands>
+      </lib:MarketGroup>
+    </lib:MarketGroups>
+  </Library>
+  <ProductRanges
+    xmlns="http://schemas.configit.com/ace/import"
+    xmlns:v1="http://schemas.configit.com/ace/import/v1"
+    xmlns:lib="http://schemas.configit.com/ace/import/v1/library"
+    xmlns:pr="http://schemas.configit.com/ace/import/v1/productrange"
+    xmlns:del="http://schemas.configit.com/ace/import/v1/delete">
+    <pr:ProductRange Code="X0">
+      <pr:Basics Description="X0" Brand="LR" Feature="X0_FEAT">
+        <pr:BrochureModelDefiningFeatureFamilies>
+          <lib:Family Code="BODYSTYLE"/>
+        </pr:BrochureModelDefiningFeatureFamilies>
+      </pr:Basics>
+      <pr:Programmes>
+        <pr:Programme Code="MY2017_PROG" Description="Model Year 2017 programme"/>
+      </pr:Programmes>
+      <pr:Events>
+        <pr:Event Code="MY2017_TT" Description="Model Year 2017 Tooling Trial" Date="2016-06-01T00:00:00Z" SecurityLevel="Proprietary" EventType="PreVolume" Programme="MY2017_PROG" />
+        <pr:Event Code="MY2017_PP" Description="Model Year 2017 Pilot Production" Date="2016-09-01T00:00:00Z" SecurityLevel="Proprietary" EventType="PreVolume" Programme="MY2017_PROG"/>
+        <pr:Event Code="MY2017_JOB1" Description="Model Year 2017 Job1" Date="2017-01-01T00:00:00Z" SecurityLevel="Proprietary" EventType="VolumeIn"  Programme="MY2017_PROG"/>
+        <pr:Event Code="RC1" Description="Running change #1" Date="2017-06-01T00:00:00Z" SecurityLevel="Proprietary" EventType="Running" />
+        <pr:Event Code="RC2" Description="Running change #2" Date="2017-09-01T00:00:00Z" SecurityLevel="Proprietary" EventType="Running" />
+      </pr:Events>
+      <pr:FeatureAssociations>
+        <pr:Feature Code="N_HEATSEAT_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="Y_HEATSEAT_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="N_HEATWINDSCR_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="Y_HEATWINDSCR_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="RED_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="GREEN_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BLUE_FEAT" Priority="3">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="N_CCPACK_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="Y_CCPACK_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="FRT_MUD_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="REAR_MUD_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="FRT_MUD_DESIGN_FEAT" Priority="3">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="REAR_MUD_DESIGN_FEAT" Priority="4">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="3DR_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="5DR_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BASIC_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="LUX_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="WHL17_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="WHL19_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="TYRE17_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="TYRE19_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BM1_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BM2_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="MY2017_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BP2017_TT_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BP2017_PP_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BP2017_VOL_FEAT" Priority="3">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="UK_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="US_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="INDIA_FEAT" Priority="3">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X0_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+      </pr:FeatureAssociations>
+      <pr:ModelYearMappings>
+        <pr:ModelYearMapping Feature="MY2017_FEAT" StartEvent="MY2017_JOB1 OUT" EndEvent="X0_END">
+          <pr:BuildPhaseMappings>
+            <pr:BuildPhaseMapping Feature="BP2017_TT_FEAT" BuildPhaseType="PreVolume" StartEvent="MY2017_TT" EndEvent="MY2017_PP" />
+            <pr:BuildPhaseMapping Feature="BP2017_PP_FEAT" BuildPhaseType="PreVolume" StartEvent="MY2017_PP" EndEvent="MY2017_JOB1" />
+            <pr:BuildPhaseMapping Feature="BP2017_VOL_FEAT" BuildPhaseType="Volume" StartEvent="MY2017_JOB1" EndEvent="X0_END" />
+          </pr:BuildPhaseMappings>
+        </pr:ModelYearMapping>
+      </pr:ModelYearMappings>
+      <pr:BrochureModels>
+        <pr:BrochureModel Code="BM1" Description="Brochure Model 1" Feature="BM1_FEAT">
+          <pr:BrochureModelDefiningFeatures>
+            <lib:Feature Code="3DR_FEAT"/>
+          </pr:BrochureModelDefiningFeatures>
+          <pr:Derivatives>
+            <lib:Feature Code="BASIC_FEAT"/>
+            <lib:Feature Code="LUX_FEAT"/>
+          </pr:Derivatives>
+        </pr:BrochureModel>
+        <pr:BrochureModel Code="BM2" Description="Brochure Model 2" Feature="BM2_FEAT">
+          <pr:BrochureModelDefiningFeatures>
+            <lib:Feature Code="5DR_FEAT"/>
+          </pr:BrochureModelDefiningFeatures>
+          <pr:Derivatives>
+            <lib:Feature Code="BASIC_FEAT"/>
+            <lib:Feature Code="LUX_FEAT"/>
+          </pr:Derivatives>
+        </pr:BrochureModel>
+      </pr:BrochureModels>
+      <pr:MarketAvailability>
+        <pr:MarketAvailabilitySpan Market="UK" IsAvailable="true" StartEvent="MY2017_TT" EndEvent="X0_END">
+          <pr:BrochureModelDerivatives>
+            <pr:BrochureModelDerivative BrochureModel="BM1" Derivative="BASIC_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM1" Derivative="LUX_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM2" Derivative="BASIC_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM2" Derivative="LUX_FEAT"/>
+          </pr:BrochureModelDerivatives>
+        </pr:MarketAvailabilitySpan>
+        <pr:MarketAvailabilitySpan Market="US" IsAvailable="true" StartEvent="MY2017_TT" EndEvent="X0_END">
+          <pr:BrochureModelDerivatives>
+            <pr:BrochureModelDerivative BrochureModel="BM1" Derivative="LUX_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM2" Derivative="LUX_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM1" Derivative="BASIC_FEAT"/>
+          </pr:BrochureModelDerivatives>
+        </pr:MarketAvailabilitySpan>
+        <pr:MarketAvailabilitySpan Market="US" IsAvailable="false" StartEvent="MY2017_TT" EndEvent="X0_END">
+          <pr:BrochureModelDerivatives>
+            <pr:BrochureModelDerivative BrochureModel="BM1" Derivative="BASIC_FEAT"/>
+          </pr:BrochureModelDerivatives>
+        </pr:MarketAvailabilitySpan>
+        <pr:MarketAvailabilitySpan Market="INDIA" IsAvailable="true" StartEvent="MY2017_TT" EndEvent="X0_END">
+          <pr:BrochureModelDerivatives>
+            <pr:BrochureModelDerivative BrochureModel="BM1" Derivative="BASIC_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM1" Derivative="LUX_FEAT"/>
+          </pr:BrochureModelDerivatives>
+        </pr:MarketAvailabilitySpan>
+      </pr:MarketAvailability>
+      <pr:FeatureApplicability>
+        <pr:IncludedFamilies>
+          <pr:Family Code="COLOR" StartEvent="MY2017_TT"/>
+        </pr:IncludedFamilies>
+        <pr:FeatureApplicabilitySpans>
+          <pr:FeatureApplicabilitySpan Family="COLOR" StartEvent="MY2017_TT" EndEvent="X0_END">
+            <pr:Markets>
+              <lib:Market Code="UK"/>
+              <lib:Market Code="US"/>
+              <lib:Market Code="INDIA"/>
+            </pr:Markets>
+            <pr:BrochureModelDerivatives>
+              <pr:BrochureModelDerivative BrochureModel="BM1" Derivative="BASIC_FEAT"/>
+            </pr:BrochureModelDerivatives>
+            <pr:Features>
+              <pr:Feature Code="RED_FEAT" Availability="Default" MarketingValue="Standard"/>
+              <pr:Feature Code="GREEN_FEAT" Availability="Available" MarketingValue="Optional"/>
+              <pr:Feature Code="BLUE_FEAT" Availability="Available" MarketingValue="Optional"/>
+            </pr:Features>
+          </pr:FeatureApplicabilitySpan>
+        </pr:FeatureApplicabilitySpans>
+      </pr:FeatureApplicability>
+      <pr:Rules>
+        <pr:TextRules>
+          <pr:TextRule Code="TEST_001" Description="Mud flaps restriction" Intent="Engineering" StartEvent="MY2017_TT" EndEvent="X0_END" IsEnabled="true" IsLocked="false">
+            <pr:Body>if AnyOf(WHLACC.FRT_MUD_FEAT, WHLACC.REAR_MUD_FEAT) then NoneOf(WHLACC.FRT_MUD_DESIGNER_FEAT, WHLACC.REAR_MUD_DESIGNER_FEAT)</pr:Body>
+          </pr:TextRule>
+          <pr:TextRule Code="TEST_004" Description="Count for Wheel Accessories" Intent="Engineering" IsLocked="false">
+            <pr:Body>COUNT(WHEELACC) >= 1</pr:Body>
+          </pr:TextRule>
+        </pr:TextRules>
+        <pr:TableRules>
+          <pr:TableRule Code="TEST_002" Description="string" Intent="Marketing" StartEvent="MY2017_TT" EndEvent="X0_END">
+            <pr:Columns>
+              <lib:Family Code="WHEEL"/>
+            </pr:Columns>
+            <pr:Rows>
+              <lib:Family Code="TYRE"/>
+            </pr:Rows>
+            <pr:Body>
+              <pr:Row RowFeature="TYRE17_FEAT">
+                <pr:Cells>
+                  <pr:Cell>
+                    <pr:Column>
+                      <lib:Feature Code="WHL17_FEAT"/>
+                    </pr:Column>
+                  </pr:Cell>
+                </pr:Cells>
+              </pr:Row>
+              <pr:Row RowFeature="TYRE19_FEAT">
+                <pr:Cells>
+                  <pr:Cell>
+                    <pr:Column>
+                      <lib:Feature Code="WHL19_FEAT"/>
+                    </pr:Column>
+                  </pr:Cell>
+                </pr:Cells>
+              </pr:Row>
+            </pr:Body>
+          </pr:TableRule>
+        </pr:TableRules>
+        <pr:PackRules>
+          <pr:PackRule Code="TEST_003" Description="Define Cold Climate Pack contents" Intent="Marketing" StartEvent="MY2017_TT" EndEvent="X0_END" IsEnabled="true" IsLocked="true" PackFeature="Y_CCPACK_FEAT">
+            <pr:Body>
+              <pr:Feature Code="Y_HEATWINDSCR_FEAT"/>
+              <pr:Feature Code="Y_HEATSEAT_FEAT">
+                <pr:Condition>DERIV.LUX_FEAT</pr:Condition>
+              </pr:Feature>
+            </pr:Body>
+          </pr:PackRule>
+        </pr:PackRules>
+      </pr:Rules>
+      <pr:SellableUnits>
+        <pr:DefiningFeatureFamilies>
+          <lib:Family Code="BODYSTYLE"/>
+          <lib:Family Code="COLOR"/>
+        </pr:DefiningFeatureFamilies>
+      </pr:SellableUnits>
+    </pr:ProductRange>
+    <pr:ProductRange Code="X1">
+      <pr:Basics Description="X1" Brand="LR" Feature="X1_FEAT">
+        <pr:BrochureModelDefiningFeatureFamilies>
+          <lib:Family Code="BODYSTYLE"/>
+        </pr:BrochureModelDefiningFeatureFamilies>
+      </pr:Basics>
+      <pr:Programmes>
+        <pr:Programme Code="MY2017_PROG" Description="Model Year 2017 programme"/>
+      </pr:Programmes>
+      <pr:Events>
+        <pr:Event Code="MY2017_TT" Description="Model Year 2017 Tooling Trial" Date="2016-06-01T00:00:00Z" SecurityLevel="Proprietary" EventType="PreVolume" Programme="MY2017_PROG" />
+        <pr:Event Code="MY2017_PP" Description="Model Year 2017 Pilot Production" Date="2016-09-01T00:00:00Z" SecurityLevel="Proprietary" EventType="PreVolume" Programme="MY2017_PROG"/>
+        <pr:Event Code="MY2017_JOB1" Description="Model Year 2017 Job1" Date="2017-01-01T00:00:00Z" SecurityLevel="Proprietary" EventType="VolumeIn"  Programme="MY2017_PROG"/>
+        <pr:Event Code="RC1" Description="Running change #1" Date="2017-06-01T00:00:00Z" SecurityLevel="Proprietary" EventType="Running" />
+        <pr:Event Code="RC2" Description="Running change #2" Date="2017-09-01T00:00:00Z" SecurityLevel="Proprietary" EventType="Running" />
+      </pr:Events>
+      <pr:FeatureAssociations>
+        <pr:Feature Code="N_HEATSEAT_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="Y_HEATSEAT_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="N_HEATWINDSCR_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="Y_HEATWINDSCR_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="RED_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="GREEN_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BLUE_FEAT" Priority="3">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="N_CCPACK_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="Y_CCPACK_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="FRT_MUD_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="REAR_MUD_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="FRT_MUD_DESIGN_FEAT" Priority="3">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="REAR_MUD_DESIGN_FEAT" Priority="4">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="3DR_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="5DR_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BASIC_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="LUX_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="WHL17_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="WHL19_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="TYRE17_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="TYRE19_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BM3_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BM4_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="MY2017_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BP2017_TT_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BP2017_PP_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="BP2017_VOL_FEAT" Priority="3">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="UK_FEAT" Priority="1">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="US_FEAT" Priority="2">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+        <pr:Feature Code="INDIA_FEAT" Priority="3">
+          <pr:Effectivities>
+            <pr:Effectivity StartEvent="MY2017_TT" EndEvent="X1_END" />
+          </pr:Effectivities>
+        </pr:Feature>
+      </pr:FeatureAssociations>
+      <pr:ModelYearMappings>
+        <pr:ModelYearMapping Feature="MY2017_FEAT" StartEvent="MY2017_JOB1 OUT" EndEvent="X1_END">
+          <pr:BuildPhaseMappings>
+            <pr:BuildPhaseMapping Feature="BP2017_TT_FEAT" BuildPhaseType="PreVolume" StartEvent="MY2017_TT" EndEvent="MY2017_PP" />
+            <pr:BuildPhaseMapping Feature="BP2017_PP_FEAT" BuildPhaseType="PreVolume" StartEvent="MY2017_PP" EndEvent="MY2017_JOB1" />
+            <pr:BuildPhaseMapping Feature="BP2017_VOL_FEAT" BuildPhaseType="Volume" StartEvent="MY2017_JOB1" EndEvent="X1_END" />
+          </pr:BuildPhaseMappings>
+        </pr:ModelYearMapping>
+      </pr:ModelYearMappings>
+      <pr:BrochureModels>
+        <pr:BrochureModel Code="BM3" Description="Brochure Model 3" Feature="BM3_FEAT">
+          <pr:BrochureModelDefiningFeatures>
+            <lib:Feature Code="3DR_FEAT"/>
+          </pr:BrochureModelDefiningFeatures>
+          <pr:Derivatives>
+            <lib:Feature Code="BASIC_FEAT"/>
+            <lib:Feature Code="LUX_FEAT"/>
+          </pr:Derivatives>
+        </pr:BrochureModel>
+        <pr:BrochureModel Code="BM4" Description="Brochure Model 4" Feature="BM4_FEAT">
+          <pr:BrochureModelDefiningFeatures>
+            <lib:Feature Code="5DR_FEAT"/>
+          </pr:BrochureModelDefiningFeatures>
+          <pr:Derivatives>
+            <lib:Feature Code="BASIC_FEAT"/>
+            <lib:Feature Code="LUX_FEAT"/>
+          </pr:Derivatives>
+        </pr:BrochureModel>
+      </pr:BrochureModels>
+      <pr:MarketAvailability>
+        <pr:MarketAvailabilitySpan Market="UK" IsAvailable="true" StartEvent="MY2017_TT" EndEvent="X1_END">
+          <pr:BrochureModelDerivatives>
+            <pr:BrochureModelDerivative BrochureModel="BM3" Derivative="BASIC_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM3" Derivative="LUX_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM4" Derivative="BASIC_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM4" Derivative="LUX_FEAT"/>
+          </pr:BrochureModelDerivatives>
+        </pr:MarketAvailabilitySpan>
+        <pr:MarketAvailabilitySpan Market="US" IsAvailable="true" StartEvent="MY2017_TT" EndEvent="X1_END">
+          <pr:BrochureModelDerivatives>
+            <pr:BrochureModelDerivative BrochureModel="BM3" Derivative="LUX_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM4" Derivative="LUX_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM3" Derivative="BASIC_FEAT"/>
+          </pr:BrochureModelDerivatives>
+        </pr:MarketAvailabilitySpan>
+        <pr:MarketAvailabilitySpan Market="US" IsAvailable="false" StartEvent="MY2017_TT" EndEvent="X1_END">
+          <pr:BrochureModelDerivatives>
+            <pr:BrochureModelDerivative BrochureModel="BM3" Derivative="BASIC_FEAT"/>
+          </pr:BrochureModelDerivatives>
+        </pr:MarketAvailabilitySpan>
+        <pr:MarketAvailabilitySpan Market="INDIA" IsAvailable="true" StartEvent="MY2017_TT" EndEvent="X1_END">
+          <pr:BrochureModelDerivatives>
+            <pr:BrochureModelDerivative BrochureModel="BM3" Derivative="BASIC_FEAT"/>
+            <pr:BrochureModelDerivative BrochureModel="BM3" Derivative="LUX_FEAT"/>
+          </pr:BrochureModelDerivatives>
+        </pr:MarketAvailabilitySpan>
+      </pr:MarketAvailability>
+      <pr:FeatureApplicability>
+        <pr:IncludedFamilies>
+          <pr:Family Code="COLOR" StartEvent="MY2017_TT"/>
+        </pr:IncludedFamilies>
+        <pr:FeatureApplicabilitySpans>
+          <pr:FeatureApplicabilitySpan Family="COLOR" StartEvent="MY2017_TT" EndEvent="X1_END">
+            <pr:Markets>
+              <lib:Market Code="UK"/>
+              <lib:Market Code="US"/>
+              <lib:Market Code="INDIA"/>
+            </pr:Markets>
+            <pr:BrochureModelDerivatives>
+              <pr:BrochureModelDerivative BrochureModel="BM3" Derivative="BASIC_FEAT"/>
+            </pr:BrochureModelDerivatives>
+            <pr:Features>
+              <pr:Feature Code="RED_FEAT" Availability="Default" MarketingValue="Standard"/>
+              <pr:Feature Code="GREEN_FEAT" Availability="Available" MarketingValue="Optional"/>
+              <pr:Feature Code="BLUE_FEAT" Availability="Available" MarketingValue="Optional"/>
+            </pr:Features>
+          </pr:FeatureApplicabilitySpan>
+        </pr:FeatureApplicabilitySpans>
+      </pr:FeatureApplicability>
+      <pr:Rules>
+        <pr:TextRules>
+          <pr:TextRule Code="TEST_001" Description="Mud flaps restriction" Intent="Engineering" StartEvent="MY2017_TT" EndEvent="X1_END" IsEnabled="true" IsLocked="false">
+            <pr:Body>if AnyOf(WHLACC.FRT_MUD_FEAT, WHLACC.REAR_MUD_FEAT) then NoneOf(WHLACC.FRT_MUD_DESIGNER_FEAT, WHLACC.REAR_MUD_DESIGNER_FEAT)</pr:Body>
+          </pr:TextRule>
+          <pr:TextRule Code="TEST_004" Description="Count for Wheel Accessories" Intent="Engineering" IsLocked="false">
+            <pr:Body>COUNT(WHEELACC) >= 1</pr:Body>
+          </pr:TextRule>
+        </pr:TextRules>
+        <pr:TableRules>
+          <pr:TableRule Code="TEST_002" Description="string" Intent="Marketing" StartEvent="MY2017_TT" EndEvent="X1_END">
+            <pr:Columns>
+              <lib:Family Code="WHEEL"/>
+            </pr:Columns>
+            <pr:Rows>
+              <lib:Family Code="TYRE"/>
+            </pr:Rows>
+            <pr:Body>
+              <pr:Row RowFeature="TYRE17_FEAT">
+                <pr:Cells>
+                  <pr:Cell>
+                    <pr:Column>
+                      <lib:Feature Code="WHL17_FEAT"/>
+                    </pr:Column>
+                  </pr:Cell>
+                </pr:Cells>
+              </pr:Row>
+              <pr:Row RowFeature="TYRE19_FEAT">
+                <pr:Cells>
+                  <pr:Cell>
+                    <pr:Column>
+                      <lib:Feature Code="WHL19_FEAT"/>
+                    </pr:Column>
+                  </pr:Cell>
+                </pr:Cells>
+              </pr:Row>
+            </pr:Body>
+          </pr:TableRule>
+        </pr:TableRules>
+        <pr:PackRules>
+          <pr:PackRule Code="TEST_003" Description="Define Cold Climate Pack contents" Intent="Marketing" StartEvent="MY2017_TT" EndEvent="X1_END" IsEnabled="true" IsLocked="true" PackFeature="Y_CCPACK_FEAT">
+            <pr:Body>
+              <pr:Feature Code="Y_HEATWINDSCR_FEAT"/>
+              <pr:Feature Code="Y_HEATSEAT_FEAT">
+                <pr:Condition>DERIV.LUX_FEAT</pr:Condition>
+              </pr:Feature>
+            </pr:Body>
+          </pr:PackRule>
+        </pr:PackRules>
+      </pr:Rules>
+      <pr:SellableUnits>
+        <pr:DefiningFeatureFamilies>
+          <lib:Family Code="BODYSTYLE"/>
+          <lib:Family Code="COLOR"/>
+        </pr:DefiningFeatureFamilies>
+      </pr:SellableUnits>
+    </pr:ProductRange>
+  </ProductRanges>
+</ConfigitAceImport>
